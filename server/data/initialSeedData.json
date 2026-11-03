@@ -1,0 +1,1824 @@
+{
+  "countries": [
+    {
+      "slug": "usa",
+      "name": "United States of America",
+      "shortName": "USA",
+      "code": "US",
+      "flagPath": "/flags/usa.svg",
+      "heroImage": "/destinations/usa.webp",
+      "heroAlt": "Statue of Liberty and New York City skyline, USA",
+      "accentColor": "#EF4444",
+      "accentBg": "bg-red-500",
+      "accentText": "text-red-500",
+      "accentBorder": "border-red-500",
+      "headline": "World’s Premier Education & Research Powerhouse",
+      "description": "Home to the world’s most prestigious Ivy League institutions, Silicon Valley tech ecosystems, and flexible academic curricula with up to 3 years of STEM OPT post-study work authorization.",
+      "badge": "3-Year STEM OPT",
+      "quickFacts": {
+        "capital": "Washington, D.C.",
+        "currency": "USD ($)",
+        "intakes": "Fall (Aug/Sep), Spring (Jan)",
+        "avgTuition": "$20,000 - $55,000 / Year",
+        "avgLivingCost": "$12,000 - $20,000 / Year",
+        "visaType": "F-1 Student Visa",
+        "processingTime": "3 - 8 Weeks"
+      },
+      "stats": [
+        {
+          "label": "QS Top 100 Unis",
+          "value": "30+"
+        },
+        {
+          "label": "Intl. Students",
+          "value": "1M+"
+        },
+        {
+          "label": "Work Rights",
+          "value": "20 Hrs/Wk"
+        },
+        {
+          "label": "Post-Study Work",
+          "value": "Up to 3 Years"
+        }
+      ],
+      "whyStudy": [
+        {
+          "title": "Academic Prestige & Global Prestige",
+          "desc": "American degrees are universally respected by Fortune 500 employers, academic institutions, and global tech leaders."
+        },
+        {
+          "title": "3-Year STEM OPT Extension",
+          "desc": "Graduates in Science, Technology, Engineering, and Math degrees can work in the US for up to 36 months after graduation."
+        },
+        {
+          "title": "Curriculum Flexibility & Research Grants",
+          "desc": "Freedom to customize your majors, change concentrations, and collaborate on multi-million dollar funded research labs."
+        },
+        {
+          "title": "Generous Assistantships & On-Campus Work",
+          "desc": "Graduate Research Assistantships (RA) and Teaching Assistantships (TA) providing tuition waivers and monthly stipends."
+        }
+      ],
+      "topUniversities": [
+        {
+          "name": "Harvard University",
+          "location": "Cambridge, MA",
+          "qsRank": "#4",
+          "popularFor": "Business, Law, Medicine",
+          "avgFee": "$54,000/yr"
+        },
+        {
+          "name": "Stanford University",
+          "location": "Stanford, CA",
+          "qsRank": "#5",
+          "popularFor": "Computer Science, AI, Engineering",
+          "avgFee": "$58,000/yr"
+        },
+        {
+          "name": "Massachusetts Institute of Technology (MIT)",
+          "location": "Cambridge, MA",
+          "qsRank": "#1",
+          "popularFor": "STEM, Robotics, Physics",
+          "avgFee": "$57,000/yr"
+        },
+        {
+          "name": "New York University (NYU)",
+          "location": "New York, NY",
+          "qsRank": "#38",
+          "popularFor": "Finance, Media, Data Science",
+          "avgFee": "$52,000/yr"
+        },
+        {
+          "name": "Northeastern University",
+          "location": "Boston, MA",
+          "qsRank": "#375",
+          "popularFor": "Co-op Internships, Tech, Health",
+          "avgFee": "$46,000/yr"
+        },
+        {
+          "name": "University of Southern California (USC)",
+          "location": "Los Angeles, CA",
+          "qsRank": "#116",
+          "popularFor": "Cinema, Engineering, Business",
+          "avgFee": "$56,000/yr"
+        }
+      ],
+      "popularPrograms": [
+        "Computer Science & Artificial Intelligence",
+        "Data Science & Business Analytics",
+        "MBA & Global Management",
+        "Biotechnology & Biomedical Engineering",
+        "Finance, Fintech & Economics",
+        "Mechanical & Aerospace Engineering"
+      ],
+      "visaRequirements": [
+        "Valid passport with at least 6 months validity beyond stay",
+        "Form I-20 issued by SEVP-approved US institution",
+        "Payment proof of SEVIS I-901 fee ($350)",
+        "DS-160 confirmation page & visa appointment letter",
+        "Evidence of sufficient financial funds (liquid funds + bank loans)",
+        "Strong home ties documentation and genuine academic intent"
+      ],
+      "scholarships": [
+        {
+          "name": "Fulbright Foreign Student Program",
+          "coverage": "Full Tuition, Airfare, Health & Stipend"
+        },
+        {
+          "name": "Hubert H. Humphrey Fellowship",
+          "coverage": "Full Tuition & Living Allowance"
+        },
+        {
+          "name": "Institutional Merit & Dean’s Scholarships",
+          "coverage": "$5,000 - $25,000 / Year"
+        }
+      ],
+      "faqs": [
+        {
+          "q": "Can international students work during studies in the USA?",
+          "a": "Yes, international students on F-1 visas can work up to 20 hours per week on-campus during academic semesters and full-time (40 hours/week) during scheduled vacation breaks."
+        },
+        {
+          "q": "What is STEM OPT and who qualifies?",
+          "a": "STEM OPT is an additional 24-month extension to the standard 12-month Optional Practical Training (total 36 months) for students graduating with designated Science, Tech, Engineering, or Math degrees."
+        },
+        {
+          "q": "Do US universities require GRE or GMAT?",
+          "a": "Many universities have waived GRE/GMAT for 2025–2027 or made them optional. However, competitive programs still value high test scores for scholarship considerations."
+        }
+      ]
+    },
+    {
+      "slug": "uk",
+      "name": "United Kingdom",
+      "shortName": "UK",
+      "code": "GB",
+      "flagPath": "/flags/uk.svg",
+      "heroImage": "/destinations/uk.webp",
+      "heroAlt": "Big Ben and the Palace of Westminster in London, UK",
+      "accentColor": "#DC2626",
+      "accentBg": "bg-red-600",
+      "accentText": "text-red-600",
+      "accentBorder": "border-red-600",
+      "headline": "Historic Academic Excellence & 1-Year Fast-Track Masters",
+      "description": "Gain globally recognized qualifications in less time with 1-year Master’s degrees and 3-year Bachelor’s courses, accompanied by the 2-Year Graduate Route post-study work visa.",
+      "badge": "1-Year Masters & 2-Yr PSW",
+      "quickFacts": {
+        "capital": "London",
+        "currency": "GBP (£)",
+        "intakes": "September/October, January/February",
+        "avgTuition": "£13,000 - £30,000 / Year",
+        "avgLivingCost": "£9,000 - £15,000 / Year",
+        "visaType": "Student Route Visa",
+        "processingTime": "3 - 4 Weeks"
+      },
+      "stats": [
+        {
+          "label": "QS Top 100 Unis",
+          "value": "17"
+        },
+        {
+          "label": "Intl. Students",
+          "value": "680K+"
+        },
+        {
+          "label": "Work Rights",
+          "value": "20 Hrs/Wk"
+        },
+        {
+          "label": "Post-Study Work",
+          "value": "2 - 3 Years"
+        }
+      ],
+      "whyStudy": [
+        {
+          "title": "Intensive 1-Year Master’s Degrees",
+          "desc": "Save a full year of living expenses and tuition fees by completing your postgraduate degree in just 12 months."
+        },
+        {
+          "title": "2-Year Post-Study Work Visa (Graduate Route)",
+          "desc": "Stay and work in the UK for 2 years (3 years for PhDs) after graduation with no minimum salary threshold or job offer required."
+        },
+        {
+          "title": "Russell Group Research Supremacy",
+          "desc": "Study at prestigious research-intensive universities known for world-altering breakthroughs and Nobel laureates."
+        },
+        {
+          "title": "Rich Culture & Proximity to Europe",
+          "desc": "Thriving multicultural hubs with convenient travel links across mainland Europe and world financial epicenters."
+        }
+      ],
+      "topUniversities": [
+        {
+          "name": "University of Oxford",
+          "location": "Oxford",
+          "qsRank": "#3",
+          "popularFor": "Humanities, Sciences, Law",
+          "avgFee": "£28,000/yr"
+        },
+        {
+          "name": "University of Cambridge",
+          "location": "Cambridge",
+          "qsRank": "#2",
+          "popularFor": "STEM, Engineering, Medicine",
+          "avgFee": "£30,000/yr"
+        },
+        {
+          "name": "Imperial College London",
+          "location": "London",
+          "qsRank": "#6",
+          "popularFor": "Engineering, Technology, Business",
+          "avgFee": "£33,000/yr"
+        },
+        {
+          "name": "University of Manchester",
+          "location": "Manchester",
+          "qsRank": "#32",
+          "popularFor": "Business Analytics, AI, Chemistry",
+          "avgFee": "£24,000/yr"
+        },
+        {
+          "name": "King’s College London (KCL)",
+          "location": "London",
+          "qsRank": "#40",
+          "popularFor": "Law, International Relations, Health",
+          "avgFee": "£26,000/yr"
+        },
+        {
+          "name": "University of Edinburgh",
+          "location": "Edinburgh, Scotland",
+          "qsRank": "#22",
+          "popularFor": "Informatics, Philosophy, Finance",
+          "avgFee": "£25,000/yr"
+        }
+      ],
+      "popularPrograms": [
+        "MSc Business Analytics & Big Data",
+        "International Management & Finance",
+        "Advanced Computer Science & Cybersecurity",
+        "Digital Marketing & Media Strategy",
+        "LLM Commercial & Corporate Law",
+        "Biomedical Sciences & Public Health"
+      ],
+      "visaRequirements": [
+        "Confirmation of Acceptance for Studies (CAS) from a licensed UK sponsor",
+        "Valid passport and tuberculosis (TB) test certificate",
+        "Proof of 28 consecutive days of maintained maintenance funds",
+        "Immigration Health Surcharge (IHS) payment",
+        "Academic certificates and approved English qualification (e.g. IELTS UKVI)"
+      ],
+      "scholarships": [
+        {
+          "name": "Chevening Scholarships",
+          "coverage": "Fully funded tuition, monthly stipend, flights"
+        },
+        {
+          "name": "Commonwealth Scholarships",
+          "coverage": "Full tuition, living costs & arrival allowances"
+        },
+        {
+          "name": "GREAT Scholarships",
+          "coverage": "Minimum £10,000 towards tuition fee"
+        }
+      ],
+      "faqs": [
+        {
+          "q": "Can I apply to UK universities without IELTS?",
+          "a": "Yes, several UK institutions allow IELTS waivers if you scored 70%+ in High School English or can provide proof of instruction in English."
+        },
+        {
+          "q": "Does the UK allow dependents for students?",
+          "a": "Under current UK immigration rules, only postgraduate research students (such as PhDs) can sponsor dependents on student visas."
+        },
+        {
+          "q": "What is the UK Graduate Route visa?",
+          "a": "The Graduate Route allows international graduates who complete an undergraduate or master’s degree in the UK to stay and work for 2 years without employer sponsorship."
+        }
+      ]
+    },
+    {
+      "slug": "canada",
+      "name": "Canada",
+      "shortName": "Canada",
+      "code": "CA",
+      "flagPath": "/flags/canada.svg",
+      "heroImage": "/destinations/canada.webp",
+      "heroAlt": "CN Tower and Toronto city skyline, Canada",
+      "accentColor": "#DC2626",
+      "accentBg": "bg-red-600",
+      "accentText": "text-red-600",
+      "accentBorder": "border-red-600",
+      "headline": "World-Class Quality of Life & Direct PR Pathways",
+      "description": "Globally celebrated for safety, multicultural welcoming, affordable tuition, and clear Post-Graduation Work Permit (PGWP) pathways leading directly to Permanent Residency (PR).",
+      "badge": "3-Year PGWP & PR Pathways",
+      "quickFacts": {
+        "capital": "Ottawa",
+        "currency": "CAD ($)",
+        "intakes": "Fall (Sep), Winter (Jan), Spring (May)",
+        "avgTuition": "CAD $18,000 - $38,000 / Year",
+        "avgLivingCost": "CAD $15,000 - $22,000 / Year",
+        "visaType": "Study Permit (SDS / Non-SDS)",
+        "processingTime": "4 - 10 Weeks"
+      },
+      "stats": [
+        {
+          "label": "Top Ranked Unis",
+          "value": "25+"
+        },
+        {
+          "label": "Intl. Students",
+          "value": "900K+"
+        },
+        {
+          "label": "Work Rights",
+          "value": "20 Hrs/Wk"
+        },
+        {
+          "label": "Post-Study Work",
+          "value": "Up to 3 Years"
+        }
+      ],
+      "whyStudy": [
+        {
+          "title": "Up to 3 Years PGWP Work Authorization",
+          "desc": "Graduate from an eligible DLI institution and earn an open work permit for up to 3 years without requiring an employer job offer."
+        },
+        {
+          "title": "Clear Canadian Permanent Residency (PR) Paths",
+          "desc": "Canadian education and local work experience grant significant additional points in Express Entry (CEC) and Provincial Nominee Programs (PNP)."
+        },
+        {
+          "title": "Paid Co-op Work Term Internships",
+          "desc": "Many Canadian diplomas and degrees incorporate paid 4-month co-op semesters giving students hands-on industry experience."
+        },
+        {
+          "title": "Top Standard of Living & Safe Cities",
+          "desc": "Consistently ranked among the top 5 safest countries globally with free emergency healthcare for international students in many provinces."
+        }
+      ],
+      "topUniversities": [
+        {
+          "name": "University of Toronto",
+          "location": "Toronto, ON",
+          "qsRank": "#21",
+          "popularFor": "Medicine, Engineering, AI, Business",
+          "avgFee": "CAD $42,000/yr"
+        },
+        {
+          "name": "University of British Columbia (UBC)",
+          "location": "Vancouver, BC",
+          "qsRank": "#34",
+          "popularFor": "Forestry, Computer Science, Law",
+          "avgFee": "CAD $40,000/yr"
+        },
+        {
+          "name": "McGill University",
+          "location": "Montreal, QC",
+          "qsRank": "#30",
+          "popularFor": "Management, Neuroscience, Software",
+          "avgFee": "CAD $38,000/yr"
+        },
+        {
+          "name": "University of Waterloo",
+          "location": "Waterloo, ON",
+          "qsRank": "#112",
+          "popularFor": "Co-op Program, Quantum Tech, Math",
+          "avgFee": "CAD $36,000/yr"
+        },
+        {
+          "name": "University of Alberta",
+          "location": "Edmonton, AB",
+          "qsRank": "#111",
+          "popularFor": "Petroleum, Engineering, Nursing",
+          "avgFee": "CAD $32,000/yr"
+        },
+        {
+          "name": "Conestoga & Seneca Colleges",
+          "location": "Ontario",
+          "qsRank": "Leading DLIs",
+          "popularFor": "Post-Graduate Diplomas, Tech, Business",
+          "avgFee": "CAD $18,000/yr"
+        }
+      ],
+      "popularPrograms": [
+        "Software Engineering & Cloud Computing",
+        "Supply Chain & Logistics Management",
+        "Healthcare Management & Nursing",
+        "Finance & Business Administration",
+        "Data Analytics & Machine Learning",
+        "Hospitality & Tourism Leadership"
+      ],
+      "visaRequirements": [
+        "Provincial Attestation Letter (PAL) & Letter of Acceptance (LOA) from DLI",
+        "Guaranteed Investment Certificate (GIC) of required living funds ($20,635 CAD)",
+        "Proof of first year paid tuition receipt",
+        "Valid passport & upfront medical examination",
+        "Clear police clearance certificate & Statement of Purpose"
+      ],
+      "scholarships": [
+        {
+          "name": "Vanier Canada Graduate Scholarships",
+          "coverage": "$50,000 per year for doctoral programs"
+        },
+        {
+          "name": "Pierre Elliott Trudeau Foundation",
+          "coverage": "Up to $40,000 per year plus research stipend"
+        },
+        {
+          "name": "University Entrance Scholarships",
+          "coverage": "$2,000 to $15,000 CAD merit discounts"
+        }
+      ],
+      "faqs": [
+        {
+          "q": "What is a Provincial Attestation Letter (PAL)?",
+          "a": "The PAL is an official verification letter issued by the Canadian province to accompany student permit applications under the federal study cap guidelines."
+        },
+        {
+          "q": "Can I apply for PR after studying in Canada?",
+          "a": "Yes! Canadian graduates who acquire 1 year of skilled work experience on their PGWP can apply through Express Entry’s Canadian Experience Class (CEC) or PNP programs."
+        },
+        {
+          "q": "What is the SDS stream for Canada?",
+          "a": "Student Direct Stream (SDS) offers expedited study permit processing for applicants from select countries with a $20,635 CAD GIC and upfront tuition payment."
+        }
+      ]
+    },
+    {
+      "slug": "australia",
+      "name": "Australia",
+      "shortName": "Australia",
+      "code": "AU",
+      "flagPath": "/flags/australia.svg",
+      "heroImage": "/destinations/australia.webp",
+      "heroAlt": "Sydney Opera House and Harbour Bridge, Australia",
+      "accentColor": "#2563EB",
+      "accentBg": "bg-blue-600",
+      "accentText": "text-blue-600",
+      "accentBorder": "border-blue-600",
+      "headline": "Pioneering Research, Vibrant Lifestyle & Regional PR Incentives",
+      "description": "Home to the iconic Group of Eight (Go8) universities, high minimum hourly wages, scenic coastal cities, and extended post-study work rights in regional areas.",
+      "badge": "Group of Eight (Go8) & Regional PSW",
+      "quickFacts": {
+        "capital": "Canberra",
+        "currency": "AUD ($)",
+        "intakes": "February (Major), July, November",
+        "avgTuition": "AUD $22,000 - $45,000 / Year",
+        "avgLivingCost": "AUD $20,000 - $26,000 / Year",
+        "visaType": "Student Visa (Subclass 500)",
+        "processingTime": "4 - 8 Weeks"
+      },
+      "stats": [
+        {
+          "label": "QS Top 100 Unis",
+          "value": "9"
+        },
+        {
+          "label": "Intl. Students",
+          "value": "750K+"
+        },
+        {
+          "label": "Work Rights",
+          "value": "48 Hrs/Fortnight"
+        },
+        {
+          "label": "Post-Study Work",
+          "value": "2 - 4 Years"
+        }
+      ],
+      "whyStudy": [
+        {
+          "title": "Group of Eight (Go8) World Dominance",
+          "desc": "Seven of Australia’s top universities sit comfortably inside the global QS Top 50, recognized for world-class research impact."
+        },
+        {
+          "title": "High Minimum Hourly Wages",
+          "desc": "Australia offers one of the highest minimum hourly wage rates in the world, making part-time student employment exceptionally rewarding."
+        },
+        {
+          "title": "Extra Regional Post-Study Work Years",
+          "desc": "Studying in designated regional hubs like Adelaide, Perth, Brisbane, or Gold Coast grants an additional 1 to 2 years of post-study work rights."
+        },
+        {
+          "title": "Warm Climate & Outdoor Lifestyle",
+          "desc": "Sunny weather, safe multicultural communities, and world-renowned outdoor beach, sports, and cultural lifestyles."
+        }
+      ],
+      "topUniversities": [
+        {
+          "name": "The University of Melbourne",
+          "location": "Melbourne, VIC",
+          "qsRank": "#13",
+          "popularFor": "Law, Medicine, Engineering, Arts",
+          "avgFee": "AUD $45,000/yr"
+        },
+        {
+          "name": "The University of Sydney",
+          "location": "Sydney, NSW",
+          "qsRank": "#18",
+          "popularFor": "Business, Tech, Architecture",
+          "avgFee": "AUD $46,000/yr"
+        },
+        {
+          "name": "The University of New South Wales (UNSW)",
+          "location": "Sydney, NSW",
+          "qsRank": "#19",
+          "popularFor": "Renewable Energy, Fintech, AI",
+          "avgFee": "AUD $44,000/yr"
+        },
+        {
+          "name": "The Australian National University (ANU)",
+          "location": "Canberra, ACT",
+          "qsRank": "#30",
+          "popularFor": "International Relations, Physics",
+          "avgFee": "AUD $42,000/yr"
+        },
+        {
+          "name": "Monash University",
+          "location": "Melbourne, VIC",
+          "qsRank": "#37",
+          "popularFor": "Pharmacy, Business Analytics, IT",
+          "avgFee": "AUD $43,000/yr"
+        },
+        {
+          "name": "The University of Queensland (UQ)",
+          "location": "Brisbane, QLD",
+          "qsRank": "#40",
+          "popularFor": "Biomedical, Mining, Marine Biology",
+          "avgFee": "AUD $41,000/yr"
+        }
+      ],
+      "popularPrograms": [
+        "Information Technology & Software Systems",
+        "Mining, Civil & Environmental Engineering",
+        "Accounting, Finance & Commercial Law",
+        "Nursing, Public Health & Pharmacy",
+        "Hospitality, Events & Tourism Management",
+        "Agricultural & Environmental Sciences"
+      ],
+      "visaRequirements": [
+        "Confirmation of Enrolment (CoE) from an Australian university",
+        "Genuine Student (GS) assessment statement demonstrating authentic study intent",
+        "Overseas Student Health Cover (OSHC) for entire duration",
+        "Proof of financial capacity ($29,710 AUD per year living expenses proof)",
+        "English test score meeting Department of Home Affairs guidelines (IELTS / PTE)"
+      ],
+      "scholarships": [
+        {
+          "name": "Australia Awards Scholarships",
+          "coverage": "Full tuition fees, return airfare, living allowance"
+        },
+        {
+          "name": "Destination Australia Program",
+          "coverage": "Up to $15,000 AUD per year for regional students"
+        },
+        {
+          "name": "Global Excellence & Merit Waivers",
+          "coverage": "15% to 50% tuition reduction from universities"
+        }
+      ],
+      "faqs": [
+        {
+          "q": "What is the Genuine Student (GS) requirement for Australia?",
+          "a": "The GS requirement evaluates your academic background, career plans, and economic reasons for choosing Australia to confirm you are a genuine student."
+        },
+        {
+          "q": "How many hours can I work in Australia as a student?",
+          "a": "You can work up to 48 hours per fortnight during university terms, and unlimited hours during official semester vacations."
+        },
+        {
+          "q": "What is the Subclass 485 Temporary Graduate Visa?",
+          "a": "It is a post-study work visa allowing graduates to work in Australia for 2 to 4 years (with potential bonus years for regional study)."
+        }
+      ]
+    },
+    {
+      "slug": "germany",
+      "name": "Germany",
+      "shortName": "Germany",
+      "code": "DE",
+      "flagPath": "/flags/germany.svg",
+      "heroImage": "/destinations/germany.webp",
+      "heroAlt": "Brandenburg Gate in Berlin, Germany",
+      "accentColor": "#EAB308",
+      "accentBg": "bg-amber-500",
+      "accentText": "text-amber-500",
+      "accentBorder": "border-amber-500",
+      "headline": "Engineering Capital of Europe & Tuition-Free Public Universities",
+      "description": "Study at world-class public universities with zero tuition fees, gain cutting-edge technical expertise, and enter the strongest industrial economy in Europe.",
+      "badge": "Zero Tuition Fees & 18-Mo Job Visa",
+      "quickFacts": {
+        "capital": "Berlin",
+        "currency": "EUR (€)",
+        "intakes": "Winter (Sep/Oct), Summer (Mar/Apr)",
+        "avgTuition": "€0 (Public Universities)",
+        "avgLivingCost": "€11,208 / Year",
+        "visaType": "National Visa for Study (Category D)",
+        "processingTime": "4 - 12 Weeks"
+      },
+      "stats": [
+        {
+          "label": "Public Unis Fee",
+          "value": "€0 Tuition"
+        },
+        {
+          "label": "Intl. Students",
+          "value": "450K+"
+        },
+        {
+          "label": "Work Rights",
+          "value": "140 Full Days"
+        },
+        {
+          "label": "Job Search Visa",
+          "value": "18 Months"
+        }
+      ],
+      "whyStudy": [
+        {
+          "title": "Tuition-Free Public Higher Education",
+          "desc": "Over 300 public universities charge zero tuition fees for both EU and non-EU international students, requiring only a nominal administrative semester ticket."
+        },
+        {
+          "title": "18-Month Post-Study Job Seeker Visa",
+          "desc": "Graduates receive an 18-month residence permit to secure employment related to their degree, transitioning smoothly into an EU Blue Card."
+        },
+        {
+          "title": "Automotive & Industrial Hub of the World",
+          "desc": "Direct industrial cooperation with giants like BMW, Mercedes, Siemens, Bosch, SAP, and Volkswagen for research and internships."
+        },
+        {
+          "title": "English-Taught Master’s Degrees",
+          "desc": "Thousands of international master’s programs in engineering, technology, and business are taught 100% in the English language."
+        }
+      ],
+      "topUniversities": [
+        {
+          "name": "Technical University of Munich (TUM)",
+          "location": "Munich",
+          "qsRank": "#28",
+          "popularFor": "Automotive, AI, Informatics",
+          "avgFee": "€0 Tuition"
+        },
+        {
+          "name": "Ludwig Maximilian University (LMU)",
+          "location": "Munich",
+          "qsRank": "#59",
+          "popularFor": "Physics, Economics, Medicine",
+          "avgFee": "€0 Tuition"
+        },
+        {
+          "name": "Heidelberg University",
+          "location": "Heidelberg",
+          "qsRank": "#84",
+          "popularFor": "Medicine, Biotechnology, Law",
+          "avgFee": "€1,500/sem"
+        },
+        {
+          "name": "RWTH Aachen University",
+          "location": "Aachen",
+          "qsRank": "#99",
+          "popularFor": "Mechanical & Production Engineering",
+          "avgFee": "€0 Tuition"
+        },
+        {
+          "name": "Karlsruhe Institute of Technology (KIT)",
+          "location": "Karlsruhe",
+          "qsRank": "#102",
+          "popularFor": "Renewables, Computer Engineering",
+          "avgFee": "€1,500/sem"
+        },
+        {
+          "name": "Berlin Institute of Technology (TU Berlin)",
+          "location": "Berlin",
+          "qsRank": "#147",
+          "popularFor": "Architecture, Civil, Software",
+          "avgFee": "€0 Tuition"
+        }
+      ],
+      "popularPrograms": [
+        "Automotive & Industrial Engineering",
+        "Renewable Energy & Power Systems",
+        "Computer Science, Cyber & Data Analytics",
+        "Biotechnology & Pharmaceutical Sciences",
+        "International Business & Supply Chain",
+        "Robotics, Mechatronics & Automation"
+      ],
+      "visaRequirements": [
+        "APS Certificate (for applicants from India, China, Vietnam)",
+        "Admission Letter from a recognized German university",
+        "Proof of opening and funding a German Blocked Account (€11,208/year)",
+        "Statutory German health insurance proof (TK, Barmer, or approved)",
+        "Curriculum Vitae (Europass format) & motivational statement"
+      ],
+      "scholarships": [
+        {
+          "name": "DAAD Scholarships",
+          "coverage": "Monthly stipend of €934 + travel allowance + insurance"
+        },
+        {
+          "name": "Deutschlandstipendium",
+          "coverage": "€300 per month merit stipend regardless of nationality"
+        },
+        {
+          "name": "Heinrich Böll Foundation Grants",
+          "coverage": "Full study stipend for social and tech innovators"
+        }
+      ],
+      "faqs": [
+        {
+          "q": "Do I need to speak German to study in Germany?",
+          "a": "For English-taught Master’s degrees, German is not required for admission. However, basic conversational German (A2/B1) is highly recommended for day-to-day life and securing internships."
+        },
+        {
+          "q": "What is an APS Certificate for Germany?",
+          "a": "The Akademische Prüfstelle (APS) certificate verifies the authenticity of your academic documents and is a mandatory prerequisite for German student visa appointments."
+        },
+        {
+          "q": "What is an EU Blue Card in Germany?",
+          "a": "An EU Blue Card is a work and residence permit for highly qualified professionals earning above a threshold salary, granting fast-track permanent residency in as little as 21–27 months."
+        }
+      ]
+    },
+    {
+      "slug": "ireland",
+      "name": "Ireland",
+      "shortName": "Ireland",
+      "code": "IE",
+      "flagPath": "/flags/ireland.svg",
+      "heroImage": "/destinations/ireland.webp",
+      "heroAlt": "Trinity College and historic Dublin city, Ireland",
+      "accentColor": "#10B981",
+      "accentBg": "bg-emerald-500",
+      "accentText": "text-emerald-500",
+      "accentBorder": "border-emerald-500",
+      "headline": "Silicon Valley of Europe & Fast-Track Tech Careers",
+      "description": "The only English-speaking country in the Eurozone, serving as European headquarters for Google, Apple, Meta, Pfizer, and TikTok with an attractive 2-year post-study work permit.",
+      "badge": "Silicon Valley of Europe · 2-Yr PSW",
+      "quickFacts": {
+        "capital": "Dublin",
+        "currency": "EUR (€)",
+        "intakes": "September/October, January/February",
+        "avgTuition": "€10,000 - €25,000 / Year",
+        "avgLivingCost": "€10,000 - €16,000 / Year",
+        "visaType": "Stamp 2 Student Visa",
+        "processingTime": "4 - 8 Weeks"
+      },
+      "stats": [
+        {
+          "label": "Global Tech HQs",
+          "value": "1,000+"
+        },
+        {
+          "label": "Intl. Students",
+          "value": "35K+"
+        },
+        {
+          "label": "Work Rights",
+          "value": "20 Hrs/Wk"
+        },
+        {
+          "label": "Post-Study Work",
+          "value": "2 Years (Masters)"
+        }
+      ],
+      "whyStudy": [
+        {
+          "title": "European Headquarters of Big Tech & Pharma",
+          "desc": "Over 1,000 multinational corporations including Google, Meta, Pfizer, Intel, Stripe, and LinkedIn base their European HQs in Ireland."
+        },
+        {
+          "title": "2-Year Third Level Graduate Scheme (Stamp 1G)",
+          "desc": "Postgraduate Master’s degree holders receive 2 years of open work rights to work full-time and convert to Critical Skills Employment Permits."
+        },
+        {
+          "title": "English-Speaking European Hub",
+          "desc": "Post-Brexit, Ireland is the primary English-speaking nation in the European Union, offering direct access to the European single market."
+        },
+        {
+          "title": "World-Leading Research Institutions",
+          "desc": "High concentration of state-funded scientific research clusters with generous government and industry innovation grants."
+        }
+      ],
+      "topUniversities": [
+        {
+          "name": "Trinity College Dublin (TCD)",
+          "location": "Dublin",
+          "qsRank": "#87",
+          "popularFor": "Literature, Tech, Law, Finance",
+          "avgFee": "€22,000/yr"
+        },
+        {
+          "name": "University College Dublin (UCD)",
+          "location": "Dublin",
+          "qsRank": "#126",
+          "popularFor": "Business Analytics, MBA, Engineering",
+          "avgFee": "€21,000/yr"
+        },
+        {
+          "name": "National University of Ireland Galway (University of Galway)",
+          "location": "Galway",
+          "qsRank": "#273",
+          "popularFor": "Biomedical Devices, Marine Science",
+          "avgFee": "€18,000/yr"
+        },
+        {
+          "name": "University College Cork (UCC)",
+          "location": "Cork",
+          "qsRank": "#273",
+          "popularFor": "Pharma, Food Science, Sustainability",
+          "avgFee": "€19,000/yr"
+        },
+        {
+          "name": "Dublin City University (DCU)",
+          "location": "Dublin",
+          "qsRank": "#421",
+          "popularFor": "Data Analytics, Communications, Fintech",
+          "avgFee": "€17,000/yr"
+        },
+        {
+          "name": "University of Limerick",
+          "location": "Limerick",
+          "qsRank": "#426",
+          "popularFor": "Aeronautical Engineering, Software",
+          "avgFee": "€16,000/yr"
+        }
+      ],
+      "popularPrograms": [
+        "Data Analytics & Cloud Computing",
+        "Fintech, Financial Mathematics & Accounting",
+        "Pharmaceutical Sciences & Drug Development",
+        "Artificial Intelligence & Machine Learning",
+        "Biomedical Engineering & Devices",
+        "International Business Management"
+      ],
+      "visaRequirements": [
+        "Letter of Acceptance from an eligible Irish educational institution",
+        "Proof of full tuition fee payment (minimum €6,000 or full first-year fee)",
+        "Evidence of sufficient financial funds (€10,000 living expenses proof)",
+        "Private medical insurance coverage",
+        "Proof of English language proficiency and clear educational gaps statement"
+      ],
+      "scholarships": [
+        {
+          "name": "Government of Ireland International Education Scholarships",
+          "coverage": "€10,000 stipend + full tuition waiver"
+        },
+        {
+          "name": "University Global Excellence Scholarships",
+          "coverage": "€2,000 to €10,000 fee discounts"
+        },
+        {
+          "name": "Enterprise Ireland Research Grants",
+          "coverage": "Funded postgraduate research fellowships"
+        }
+      ],
+      "faqs": [
+        {
+          "q": "What is the Third Level Graduate Scheme in Ireland?",
+          "a": "The scheme (Stamp 1G) allows non-EEA students graduating with a Master’s or PhD from an Irish institution to work for 24 months in Ireland."
+        },
+        {
+          "q": "What is a Critical Skills Employment Permit in Ireland?",
+          "a": "It is a coveted work permit for tech, engineering, and medical professionals leading directly to Irish Permanent Residency (Stamp 4) in just 2 years."
+        },
+        {
+          "q": "Can students work part-time in Ireland?",
+          "a": "Yes, international students holding Stamp 2 can work 20 hours per week during term time and 40 hours per week during holidays (June-September and Dec 15-Jan 15)."
+        }
+      ]
+    },
+    {
+      "slug": "new-zealand",
+      "name": "New Zealand",
+      "shortName": "New Zealand",
+      "code": "NZ",
+      "flagPath": "/flags/new-zealand.svg",
+      "heroImage": "/destinations/new-zealand.webp",
+      "heroAlt": "Auckland skyline and Queenstown mountains, New Zealand",
+      "accentColor": "#3B82F6",
+      "accentBg": "bg-blue-500",
+      "accentText": "text-blue-500",
+      "accentBorder": "border-blue-500",
+      "headline": "World-Class Innovation, Safety & Natural Splendor",
+      "description": "All 8 public universities in New Zealand rank in the top 3% globally. Enjoy a relaxed lifestyle, progressive visa policies, and generous 3-year post-study work rights.",
+      "badge": "All Unis in QS Top 3% · 3-Yr PSW",
+      "quickFacts": {
+        "capital": "Wellington",
+        "currency": "NZD ($)",
+        "intakes": "February (Major), July",
+        "avgTuition": "NZD $24,000 - $42,000 / Year",
+        "avgLivingCost": "NZD $20,000 / Year",
+        "visaType": "Fee Paying Student Visa",
+        "processingTime": "4 - 8 Weeks"
+      },
+      "stats": [
+        {
+          "label": "Universities in Top 3%",
+          "value": "100% (All 8)"
+        },
+        {
+          "label": "Intl. Students",
+          "value": "40K+"
+        },
+        {
+          "label": "Work Rights",
+          "value": "20 Hrs/Wk"
+        },
+        {
+          "label": "Post-Study Work",
+          "value": "Up to 3 Years"
+        }
+      ],
+      "whyStudy": [
+        {
+          "title": "100% of Universities in Global Top 3%",
+          "desc": "Every single one of New Zealand’s 8 state-funded universities holds international QS ranking, guaranteeing unmatched academic standards."
+        },
+        {
+          "title": "Up to 3-Year Post-Study Work Visas",
+          "desc": "Graduates of master’s degrees and eligible degree levels can work in New Zealand for up to 3 years with no employer sponsor restriction."
+        },
+        {
+          "title": "Safest & Most Welcoming Country",
+          "desc": "Consistently ranked among the top 3 peaceful nations globally with low crime, transparent governance, and clean environments."
+        },
+        {
+          "title": "Direct Industry-Integrated Degrees",
+          "desc": "Curricula engineered alongside local industry for practical skills, fieldwork, and high graduate employability in high-demand sectors."
+        }
+      ],
+      "topUniversities": [
+        {
+          "name": "The University of Auckland",
+          "location": "Auckland",
+          "qsRank": "#65",
+          "popularFor": "Computer Science, Business, Bio-Engineering",
+          "avgFee": "NZD $40,000/yr"
+        },
+        {
+          "name": "University of Otago",
+          "location": "Dunedin",
+          "qsRank": "#214",
+          "popularFor": "Health Sciences, Dentistry, Tourism",
+          "avgFee": "NZD $36,000/yr"
+        },
+        {
+          "name": "Victoria University of Wellington",
+          "location": "Wellington",
+          "qsRank": "#244",
+          "popularFor": "Law, Public Policy, Architecture",
+          "avgFee": "NZD $35,000/yr"
+        },
+        {
+          "name": "University of Canterbury",
+          "location": "Christchurch",
+          "qsRank": "#261",
+          "popularFor": "Civil & Structural Engineering, Forestry",
+          "avgFee": "NZD $37,000/yr"
+        },
+        {
+          "name": "Massey University",
+          "location": "Palmerston North",
+          "qsRank": "#242",
+          "popularFor": "Aviation, Agriculture, Vet Science",
+          "avgFee": "NZD $33,000/yr"
+        },
+        {
+          "name": "University of Waikato",
+          "location": "Hamilton",
+          "qsRank": "#235",
+          "popularFor": "Management, Cyber Security, Marine",
+          "avgFee": "NZD $32,000/yr"
+        }
+      ],
+      "popularPrograms": [
+        "Agribusiness & Agricultural Science",
+        "Civil, Structural & Environmental Engineering",
+        "Information Technology & Software Systems",
+        "Tourism, Hospitality & Environmental Ecology",
+        "Veterinary Medicine & Animal Sciences",
+        "Business Administration & Supply Chain"
+      ],
+      "visaRequirements": [
+        "Offer of Place from an approved New Zealand education provider",
+        "Receipt of payment of tuition fees (or approved scholarship)",
+        "Proof of NZD $20,000 per year living funds",
+        "Medical and chest X-ray certificate",
+        "Police clearance certificate and Genuine Student Intent evidence"
+      ],
+      "scholarships": [
+        {
+          "name": "New Zealand International Excellence Awards",
+          "coverage": "Up to NZD $10,000 tuition grant"
+        },
+        {
+          "name": "Manaaki New Zealand Scholarships",
+          "coverage": "Fully funded tuition, living allowance, travel"
+        },
+        {
+          "name": "University Dean’s Merit Bursaries",
+          "coverage": "NZD $5,000 - $15,000 fee waivers"
+        }
+      ],
+      "faqs": [
+        {
+          "q": "Can students bring their spouse or partner to New Zealand?",
+          "a": "Students enrolled in eligible level 8 (postgraduate diploma) or level 9 (Master’s) programs on the Green List may support an open work visa for their partner."
+        },
+        {
+          "q": "What is the New Zealand Green List?",
+          "a": "The Green List is Immigration New Zealand’s fast-track pathway to residency for skilled occupations in healthcare, engineering, ICT, and education."
+        },
+        {
+          "q": "How long does a New Zealand Post-Study Work Visa last?",
+          "a": "Master’s and PhD graduates are entitled to a 3-year Post-Study Work Visa, allowing open employment anywhere across the country."
+        }
+      ]
+    },
+    {
+      "slug": "uae",
+      "name": "United Arab Emirates",
+      "shortName": "UAE",
+      "code": "AE",
+      "flagPath": "/flags/uae.svg",
+      "heroImage": "/destinations/uae.webp",
+      "heroAlt": "Burj Khalifa and Dubai downtown skyline, UAE",
+      "accentColor": "#16A34A",
+      "accentBg": "bg-emerald-600",
+      "accentText": "text-emerald-600",
+      "accentBorder": "border-emerald-600",
+      "headline": "Global Business Epicenter & 10-Year Golden Visa Gateway",
+      "description": "Experience zero income tax, international branch campuses of top UK/US/Australian universities, thriving startup hubs, and the coveted 10-Year Golden Visa for outstanding graduates.",
+      "badge": "Tax-Free Living · 10-Yr Golden Visa",
+      "quickFacts": {
+        "capital": "Abu Dhabi",
+        "currency": "AED (Dirham)",
+        "intakes": "September (Major), January",
+        "avgTuition": "AED 40,000 - 85,000 / Year",
+        "avgLivingCost": "AED 30,000 - 50,000 / Year",
+        "visaType": "Student Residence Visa",
+        "processingTime": "2 - 4 Weeks"
+      },
+      "stats": [
+        {
+          "label": "Intl. Campuses",
+          "value": "35+"
+        },
+        {
+          "label": "Golden Visa",
+          "value": "10-Year Path"
+        },
+        {
+          "label": "Tax-Free Income",
+          "value": "0% Tax"
+        },
+        {
+          "label": "Visa Processing",
+          "value": "2 - 3 Weeks"
+        }
+      ],
+      "whyStudy": [
+        {
+          "title": "Global Branch Campuses in Dubai & Abu Dhabi",
+          "desc": "Earn identical degrees from prestigious British, American, and Australian institutions at a fraction of living costs and with flexible credit transfers."
+        },
+        {
+          "title": "10-Year Golden Visa for Top Students",
+          "desc": "High-performing university graduates (GPA 3.8+) and outstanding high school achievers qualify for the coveted 10-Year UAE Golden Residency."
+        },
+        {
+          "title": "100% Tax-Free Income & Global Employment",
+          "desc": "Work in an ultra-modern tax-free economy with global corporations in tech, logistics, finance, media, and hospitality."
+        },
+        {
+          "title": "Rapid Visa Processing with Zero Rejections",
+          "desc": "Streamlined university-sponsored student visas processed in under 3 weeks without complex embassy interview queues."
+        }
+      ],
+      "topUniversities": [
+        {
+          "name": "New York University Abu Dhabi (NYUAD)",
+          "location": "Abu Dhabi",
+          "qsRank": "Global NYU Degree",
+          "popularFor": "Liberal Arts, AI, Economics",
+          "avgFee": "AED 80,000/yr"
+        },
+        {
+          "name": "University of Birmingham Dubai",
+          "location": "Dubai Academic City",
+          "qsRank": "Russell Group (UK)",
+          "popularFor": "Computer Science, Business, Law",
+          "avgFee": "AED 75,000/yr"
+        },
+        {
+          "name": "University of Wollongong in Dubai (UOWD)",
+          "location": "Dubai Knowledge Park",
+          "qsRank": "Australian Degree",
+          "popularFor": "Engineering, Media, Finance",
+          "avgFee": "AED 60,000/yr"
+        },
+        {
+          "name": "Middlesex University Dubai",
+          "location": "Dubai",
+          "qsRank": "Top UK Campus",
+          "popularFor": "Psychology, IT, Marketing, Law",
+          "avgFee": "AED 58,000/yr"
+        },
+        {
+          "name": "Heriot-Watt University Dubai",
+          "location": "Dubai Knowledge Park",
+          "qsRank": "Scottish Pioneer",
+          "popularFor": "Renewable Energy, Actuarial Science",
+          "avgFee": "AED 65,000/yr"
+        },
+        {
+          "name": "Canadian University Dubai (CUD)",
+          "location": "City Walk, Dubai",
+          "qsRank": "Canadian Curriculum",
+          "popularFor": "Architecture, Interior Design, Business",
+          "avgFee": "AED 62,000/yr"
+        }
+      ],
+      "popularPrograms": [
+        "Artificial Intelligence & Cloud Architectures",
+        "International Business, Logistics & Supply Chain",
+        "Luxury Hospitality, Tourism & Event Management",
+        "Fintech, Islamic Banking & Blockchain",
+        "Civil, Structural & Petroleum Engineering",
+        "Digital Media, Branding & Public Relations"
+      ],
+      "visaRequirements": [
+        "Official Admission Offer from accredited UAE university",
+        "Valid passport with minimum 6 months validity",
+        "UAE Medical fitness test (blood test and chest X-ray)",
+        "Emirates ID application clearance",
+        "University sponsorship security deposit and health insurance"
+      ],
+      "scholarships": [
+        {
+          "name": "Chancellor’s Academic Merit Scholarships",
+          "coverage": "20% to 50% tuition discounts"
+        },
+        {
+          "name": "UAE Government STEM Fellowships",
+          "coverage": "Competitive research funding for top graduates"
+        },
+        {
+          "name": "Early Bird & Sibling Bursaries",
+          "coverage": "10% to 15% upfront fee concessions"
+        }
+      ],
+      "faqs": [
+        {
+          "q": "Can students work part-time in Dubai/UAE?",
+          "a": "Yes, international students holding a valid university-sponsored residence visa can work part-time (up to 20 hours/week) after obtaining a student work permit from the Ministry of Human Resources."
+        },
+        {
+          "q": "Is a degree from a Dubai branch campus the same as the main campus?",
+          "a": "Yes! Institutions like University of Birmingham Dubai, Heriot-Watt, and UOWD award identical degree certificates conferred by their UK or Australian parent campuses."
+        },
+        {
+          "q": "How does the 10-Year UAE Golden Visa work for students?",
+          "a": "Graduates with a cumulative GPA of 3.8+ from accredited UAE universities can apply for 10-year residency without employer sponsorship, permitting them to live and work anywhere in the country."
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How much does it cost to study abroad?",
+      "answer": "Costs vary by country and university. Tuition can range from $0 (Germany public universities) to $50,000+ per year (USA Ivy League). Living costs add $8,000–$25,000/year. We help you find scholarships and education loans to reduce out-of-pocket expenses."
+    },
+    {
+      "question": "Do I need IELTS or PTE to study abroad?",
+      "answer": "Most English-speaking countries (UK, Canada, Australia, USA) require an English proficiency test like IELTS, TOEFL, or PTE. Some European countries (Germany, Ireland) may waive this for applicants with English-medium prior education. We guide you on the minimum scores required per university."
+    },
+    {
+      "question": "How does the student visa process work?",
+      "answer": "After receiving an offer letter from your university, our visa team prepares your financial documents, Statement of Purpose, and application. We also conduct mock embassy interviews. Processing times range from 4 weeks (UK) to 12 weeks (USA), so we plan well in advance."
+    },
+    {
+      "question": "Are there scholarships available for international students?",
+      "answer": "Yes! Many universities offer merit-based and need-based scholarships. Government scholarships such as Chevening (UK), Vanier (Canada), and Australia Awards are also available. We match your profile to the best scholarship opportunities and help with the application."
+    },
+    {
+      "question": "What are the main intakes for international students?",
+      "answer": "Most universities offer two main intakes: September/Fall (largest intake) and January/Winter. Australia additionally has a July intake. We advise you on the best intake based on your academic calendar, preparation time, and application deadlines."
+    },
+    {
+      "question": "Can I work while studying abroad?",
+      "answer": "Yes. Most countries allow part-time work during studies — Canada (20 hrs/week), UK (20 hrs/week), Australia (48 hrs/fortnight), and Germany (120 full days/year). Rules vary; we provide a full work-rights briefing for your destination country."
+    },
+    {
+      "question": "Can I get an education loan to study abroad?",
+      "answer": "Yes. We partner with leading banks and NBFCs that offer education loans with competitive interest rates, covering tuition and living expenses. Some loans are collateral-free up to ₹40 lakhs. We assist with documentation and bank interviews."
+    },
+    {
+      "question": "How long does the entire process take?",
+      "answer": "On average, the process takes 4–9 months from initial counselling to visa approval: 1–2 months for university selection, 2–4 months for application & admission, and 1–3 months for visa processing. Starting early gives you more choices and lower stress."
+    },
+    {
+      "question": "What is the overseas recruitment process?",
+      "answer": "We register your profile, match you with suitable employers in the UAE, UK, Canada, or other destinations, and guide you through interviews, offer letters, and work-permit documentation. Our recruiters have placed 5,000+ candidates in healthcare, hospitality, construction, and IT roles."
+    },
+    {
+      "question": "Is there support after I arrive in my destination country?",
+      "answer": "Absolutely. Our post-arrival support includes airport pickup coordination, local SIM registration, bank account setup guidance, and a dedicated helpline. We stay connected until you are fully settled in your new academic or work environment."
+    }
+  ],
+  "universities": [
+    {
+      "name": "University of Toronto",
+      "country": "Canada"
+    },
+    {
+      "name": "University of Oxford",
+      "country": "UK"
+    },
+    {
+      "name": "University of Melbourne",
+      "country": "Australia"
+    },
+    {
+      "name": "Harvard University",
+      "country": "USA"
+    },
+    {
+      "name": "TU Munich",
+      "country": "Germany"
+    },
+    {
+      "name": "University of Auckland",
+      "country": "New Zealand"
+    },
+    {
+      "name": "Trinity College Dublin",
+      "country": "Ireland"
+    },
+    {
+      "name": "New York University",
+      "country": "USA"
+    },
+    {
+      "name": "University of British Columbia",
+      "country": "Canada"
+    },
+    {
+      "name": "King's College London",
+      "country": "UK"
+    },
+    {
+      "name": "Monash University",
+      "country": "Australia"
+    },
+    {
+      "name": "University of Sydney",
+      "country": "Australia"
+    },
+    {
+      "name": "University of Edinburgh",
+      "country": "UK"
+    },
+    {
+      "name": "McGill University",
+      "country": "Canada"
+    },
+    {
+      "name": "Heidelberg University",
+      "country": "Germany"
+    },
+    {
+      "name": "University College Dublin",
+      "country": "Ireland"
+    }
+  ],
+  "services": [
+    {
+      "slug": "university-selection",
+      "category": "Study Abroad Services",
+      "categorySlug": "study-abroad",
+      "title": "University Selection & Application",
+      "tagline": "Strategic institutional matching and flawless application submissions to top QS-ranked universities worldwide.",
+      "badge": "ACADEMIC CONSULTANCY",
+      "iconName": "GraduationCap",
+      "accentColor": "#2563EB",
+      "accentBg": "bg-blue-600",
+      "stats": [
+        {
+          "label": "Partner Universities",
+          "value": "500+"
+        },
+        {
+          "label": "Offer Letter Success",
+          "value": "99.2%"
+        },
+        {
+          "label": "Avg Offer Turnaround",
+          "value": "2-3 Weeks"
+        },
+        {
+          "label": "Scholarships Secured",
+          "value": "$15M+"
+        }
+      ],
+      "overview": "Choosing the right university and academic program is the single most pivotal decision of your international career. Our experienced education advisors evaluate your academic credentials, test scores, budgetary parameters, and post-graduation career ambitions to construct an optimized, multi-tier institutional roadmap.",
+      "deliverables": [
+        "Comprehensive Academic & Career Profile Evaluation",
+        "3-Tier Institutional Shortlist (Dream, Reach, and Safe colleges)",
+        "Professional SOP (Statement of Purpose) Editing & Refinement",
+        "Academic LOR (Letter of Recommendation) Structuring Guidance",
+        "Direct Application Portal Processing & Deadline Tracking",
+        "Application Fee Waiver Facilitation where applicable",
+        "Offer Letter Evaluation & Acceptance Advice"
+      ],
+      "process": [
+        {
+          "step": "01",
+          "title": "Diagnostic Profiling",
+          "desc": "We review your academic transcripts, English proficiency scores, research interests, and budget to establish realistic target criteria."
+        },
+        {
+          "step": "02",
+          "title": "Strategic Shortlisting",
+          "desc": "Our counselors curate a balanced list of top-ranked programs across your preferred destination countries, optimizing your acceptance probability."
+        },
+        {
+          "step": "03",
+          "title": "Document Engineering",
+          "desc": "Our editorial team works closely with you to craft persuasive SOPs, tailored CVs, and compliant recommendation letters that stand out to admissions boards."
+        },
+        {
+          "step": "04",
+          "title": "Submission & Tracking",
+          "desc": "We submit your applications through direct university representative channels, fast-tracking document verification and offer letter releases."
+        }
+      ],
+      "faqs": [
+        {
+          "q": "How many universities can I apply to through YTC Global?",
+          "a": "We generally recommend applying to 4 to 8 universities distributed across Dream, Target, and Safe categories to maximize your admission and scholarship prospects."
+        },
+        {
+          "q": "Do you help students obtain application fee waivers?",
+          "a": "Yes, as official representative partners for hundreds of universities in the USA, UK, Canada, Australia, and Europe, we frequently secure application fee waivers for eligible students."
+        },
+        {
+          "q": "When should I start the university application process?",
+          "a": "Ideally 8 to 12 months before your intended intake. For example, for Fall (September) admissions, students should start profiling between October and February."
+        }
+      ]
+    },
+    {
+      "slug": "visa-guidance",
+      "category": "Study Abroad Services",
+      "categorySlug": "study-abroad",
+      "title": "Visa Guidance & Documentation",
+      "tagline": "Certified visa documentation auditing, mock embassy interview rehearsals, and a 98.4% historical visa grant success rate.",
+      "badge": "VISA & IMMIGRATION",
+      "iconName": "FileText",
+      "accentColor": "#059669",
+      "accentBg": "bg-emerald-600",
+      "stats": [
+        {
+          "label": "Visa Success Rate",
+          "value": "98.4%"
+        },
+        {
+          "label": "Visas Approved",
+          "value": "10,000+"
+        },
+        {
+          "label": "Mock Sessions",
+          "value": "3-5 Per Student"
+        },
+        {
+          "label": "Processing Speed",
+          "value": "Fast-Track VFS"
+        }
+      ],
+      "overview": "Securing your university admission is only the first step; obtaining your student visa requires thorough legal preparation, airtight financial proof, and convincing articulation of genuine academic intent. Our licensed visa specialists guide you through every nuance of embassy regulations across all major destinations.",
+      "deliverables": [
+        "Country-Specific Legal Document Verification & Audit",
+        "Financial Portfolio & Proof of Funds (POF) Structuring",
+        "Genuine Temporary Entrant (GTE / CAQ / SOP) Drafting",
+        "Official VFS / Embassy Appointment & Biometrics Scheduling",
+        "1-on-1 Mock Visa Interview Simulations with Experienced Officers",
+        "Dependent, Spouse, and Parent Visitor Visa Filing Assistance",
+        "Pre-departure Travel & Immigration Border Clearance Checklists"
+      ],
+      "process": [
+        {
+          "step": "01",
+          "title": "File Assessment & Checklist",
+          "desc": "We provide an itemized, destination-specific checklist and audit your identity, academic, and financial documents to prevent discrepancies."
+        },
+        {
+          "step": "02",
+          "title": "Financial Structuring",
+          "desc": "Our advisors assist you and your sponsors with acceptable funding formats, including education loans, liquid deposits, and sponsor affidavits."
+        },
+        {
+          "step": "03",
+          "title": "Mock Embassy Rehearsals",
+          "desc": "Participate in rigorous 1-on-1 mock interviews replicating real consulate environments, mastering body language and confident answers."
+        },
+        {
+          "step": "04",
+          "title": "Filing & Status Tracking",
+          "desc": "We lodge your application on official immigration portals (US CEAC, UKVI, IRCC, Australia ImmiAccount) and track updates in real-time."
+        }
+      ],
+      "faqs": [
+        {
+          "q": "What happens if a student has an earlier visa refusal?",
+          "a": "We specialize in refusal recovery cases. We request official GCMS / refusal notes, identify the exact grounds of denial, rectify documentation gaps, and re-file with a comprehensive rebuttal statement."
+        },
+        {
+          "q": "How much funds do I need to demonstrate for a student visa?",
+          "a": "It varies by country: typically 1 year of tuition fees plus living expenses ($15,000 to $25,000 depending on country regulations). We provide exact mathematical breakdowns during advisory."
+        },
+        {
+          "q": "Can my spouse or dependent join me during my studies?",
+          "a": "Yes, destinations such as the UK (for research degrees), Canada, Australia, and the USA allow eligible spouses to accompany students, often with dependent open work rights."
+        }
+      ]
+    },
+    {
+      "slug": "ielts-preparation",
+      "category": "Study Abroad Services",
+      "categorySlug": "study-abroad",
+      "title": "IELTS / Test Preparation",
+      "tagline": "Master IELTS, TOEFL, PTE, and Duolingo with certified trainers, diagnostic feedback, and proven 7.5+ band strategies.",
+      "badge": "LANGUAGE PROFICIENCY",
+      "iconName": "BookOpen",
+      "accentColor": "#7C3AED",
+      "accentBg": "bg-purple-600",
+      "stats": [
+        {
+          "label": "Avg Band Score",
+          "value": "7.5+"
+        },
+        {
+          "label": "Students Trained",
+          "value": "15,000+"
+        },
+        {
+          "label": "First-Attempt Pass",
+          "value": "94%"
+        },
+        {
+          "label": "Mock Test Suite",
+          "value": "25+ Exams"
+        }
+      ],
+      "overview": "Standardized English proficiency exams are the fundamental prerequisite for university admissions and visa eligibility worldwide. Our test preparation wing combines certified master instructors, adaptive diagnostic testing, and targeted feedback workshops to guarantee you surpass your university threshold.",
+      "deliverables": [
+        "Comprehensive Initial Diagnostic Level Assessment",
+        "Certified British Council & IDP Master Instructors",
+        "Live Online & Interactive In-Person Batch Options",
+        "25+ Full-Length Scored Mock Tests with Analytical Reports",
+        "One-on-One Speaking Confidence & Pronunciation Clinics",
+        "Targeted Task 1 & Task 2 Writing Evaluation & Correction",
+        "Exclusive Cambridge Study Material & Audio Practice Vaults"
+      ],
+      "process": [
+        {
+          "step": "01",
+          "title": "Baseline Diagnostic",
+          "desc": "Take an initial simulated test to pinpoint your strengths and identify high-priority improvement areas across Listening, Reading, Writing, and Speaking."
+        },
+        {
+          "step": "02",
+          "title": "Core Modular Mastery",
+          "desc": "Attend interactive sessions breaking down question patterns, skim-reading techniques, lexical resource enhancement, and grammatical accuracy."
+        },
+        {
+          "step": "03",
+          "title": "Intensive Clinics",
+          "desc": "Receive personalized line-by-line feedback on essay structures and 1-on-1 speaking rehearsals recorded for review."
+        },
+        {
+          "step": "04",
+          "title": "Timed Mock Simulations",
+          "desc": "Sit for full-length proctored mock exams under authentic test-day conditions to master time management and eliminate exam anxiety."
+        }
+      ],
+      "faqs": [
+        {
+          "q": "What score is generally required for international universities?",
+          "a": "Most undergraduate programs require an overall IELTS 6.0 - 6.5 (no band below 6.0), while competitive postgraduate and medical programs typically require 6.5 - 7.5."
+        },
+        {
+          "q": "Do you offer PTE and TOEFL coaching as well?",
+          "a": "Yes, our syllabus covers IELTS Academic & General, PTE Academic (Pearson), TOEFL iBT, and the Duolingo English Test (DET)."
+        },
+        {
+          "q": "How long does a typical preparation course take?",
+          "a": "Our standard master program runs for 4 to 6 weeks, alongside intensive 2-week crash courses for students with fast-approaching application deadlines."
+        }
+      ]
+    },
+    {
+      "slug": "accommodation-assistance",
+      "category": "Study Abroad Services",
+      "categorySlug": "study-abroad",
+      "title": "Accommodation Assistance",
+      "tagline": "Secure, vetted, and budget-friendly student housing arrangements located conveniently near university campuses.",
+      "badge": "HOUSING & RELOCATION",
+      "iconName": "Home",
+      "accentColor": "#D97706",
+      "accentBg": "bg-amber-600",
+      "stats": [
+        {
+          "label": "Vetted Rooms",
+          "value": "50,000+"
+        },
+        {
+          "label": "Campus Proximity",
+          "value": "< 15 Mins"
+        },
+        {
+          "label": "Zero Scam Guarantee",
+          "value": "100% Vetted"
+        },
+        {
+          "label": "Assisted Move-ins",
+          "value": "5,000+"
+        }
+      ],
+      "overview": "Finding safe, comfortable, and affordable student housing in a foreign country can be daunting for students and parents alike. YTC Global collaborates with licensed student residence providers (PBSA), trusted homestay networks, and verified private landlords to ensure you have a secured home before you fly.",
+      "deliverables": [
+        "On-Campus University Dormitory Booking & Waitlist Priority",
+        "Purpose-Built Student Accommodation (PBSA) with En-Suite Options",
+        "Shared Apartments & Studio Flats with Verified Legal Leases",
+        "Virtual Video Tours & Neighborhood Safety Assessments",
+        "Lease Agreement Auditing (deposit protection, utility bills, tenancy rights)",
+        "Pre-Arrival Roommate Matching with Fellow International Students",
+        "Airport Meet-and-Greet Transfer Directly to Your Residence"
+      ],
+      "process": [
+        {
+          "step": "01",
+          "title": "Requirement Profiling",
+          "desc": "We analyze your budget, campus location, dietary preferences, room type (private studio, ensuite, or shared), and lease duration."
+        },
+        {
+          "step": "02",
+          "title": "Curated Options & Virtual Tours",
+          "desc": "Review vetted properties equipped with photos, video walkthroughs, transit maps, and clear utility inclusions with no hidden costs."
+        },
+        {
+          "step": "03",
+          "title": "Lease & Deposit Processing",
+          "desc": "We inspect the tenancy contract to safeguard your legal rights, ensuring your deposit is locked into government-authorized tenancy schemes."
+        },
+        {
+          "step": "04",
+          "title": "Arrival & Key Handover",
+          "desc": "Receive confirmation vouchers for your visa file and coordinate key collection and airport transfers for hassle-free check-in upon arrival."
+        }
+      ],
+      "faqs": [
+        {
+          "q": "Is it better to stay on-campus or in private student accommodation?",
+          "a": "On-campus dorms are convenient for 1st-year students wanting campus immersion. Off-campus private accommodations (PBSA) often offer superior modern amenities (gyms, private en-suite bathrooms, high-speed WiFi) and year-round leases at competitive rates."
+        },
+        {
+          "q": "Are utility bills (heating, electricity, internet) included in the rent?",
+          "a": "Most purpose-built student accommodations (PBSA) include water, gas, electricity, heating, and high-speed Wi-Fi in the quoted weekly rent, helping students budget without surprise expenses."
+        },
+        {
+          "q": "Can I book my accommodation before receiving my student visa?",
+          "a": "Yes, most of our verified partner properties provide \"No Visa, No Pay\" guarantees, meaning your deposit is 100% refundable if your visa is rejected."
+        }
+      ]
+    },
+    {
+      "slug": "overseas-recruitment",
+      "category": "Recruitment Services",
+      "categorySlug": "recruitment",
+      "title": "Overseas Recruitment Solutions",
+      "tagline": "Connecting skilled workers and experienced professionals with licensed international employers across the UAE, UK, and Europe.",
+      "badge": "GLOBAL EMPLOYMENT",
+      "iconName": "Globe",
+      "accentColor": "#FF6A00",
+      "accentBg": "bg-orange-500",
+      "stats": [
+        {
+          "label": "Job Placements",
+          "value": "8,000+"
+        },
+        {
+          "label": "Employer Network",
+          "value": "250+"
+        },
+        {
+          "label": "Verified Sectors",
+          "value": "Healthcare, IT, Trade"
+        },
+        {
+          "label": "Ethical Standards",
+          "value": "100% Compliant"
+        }
+      ],
+      "overview": "YTC Global operates a premier cross-border manpower recruitment wing dedicated to matching qualified professionals, healthcare personnel, skilled tradespeople, and IT specialists with vetted multinational corporations and government-licensed overseas employers.",
+      "deliverables": [
+        "Direct Sourcing for Healthcare, Hospitality, Construction & IT Industries",
+        "Comprehensive International Employment Contract Audits",
+        "Legal Work Permit & Government Sponsorship Processing",
+        "Strict Zero-Recruitment-Fee Ethical Policy Compliance",
+        "Pre-Deployment Cultural Orientation & Workplace Adaptation Briefings",
+        "Post-Arrival Settlement, Tax ID Registration & Banking Coordination",
+        "Dedicated Employee Welfare Grievance Support"
+      ],
+      "process": [
+        {
+          "step": "01",
+          "title": "Candidate Profiling & Credentialing",
+          "desc": "We verify your professional certifications, academic degrees, and relevant experience to match active overseas employer requisitions."
+        },
+        {
+          "step": "02",
+          "title": "Employer Screening & Interview",
+          "desc": "We schedule direct technical interviews and skills evaluations with international hiring managers, providing preparatory coaching."
+        },
+        {
+          "step": "03",
+          "title": "Work Visa & Medical Clearance",
+          "desc": "Upon selection, we manage embassy work permit petitions, GAMCA medical clearance, and official labor ministry attestations."
+        },
+        {
+          "step": "04",
+          "title": "Deployment & Onboarding",
+          "desc": "We book flight transit, arrange airport pickup with your new employer, and monitor your initial onboarding welfare."
+        }
+      ],
+      "faqs": [
+        {
+          "q": "Which countries do you place skilled workers into?",
+          "a": "Our primary employment corridors include the United Arab Emirates (Dubai/Abu Dhabi), the United Kingdom (NHS and private healthcare), Germany (Opportunity Card & skilled trades), and Poland/EU."
+        },
+        {
+          "q": "Does YTC charge candidates unfair recruitment fees?",
+          "a": "No. We strictly adhere to the ILO (International Labour Organization) Fair Recruitment Guidelines and national labor regulations."
+        },
+        {
+          "q": "What sectors have the highest international hiring demand right now?",
+          "a": "Registered Nurses & Healthcare Assistants, Civil & Mechanical Engineers, Cloud/DevOps & Software Developers, Hospitality Managers, and Certified Heavy Machine Operators."
+        }
+      ]
+    },
+    {
+      "slug": "talent-sourcing",
+      "category": "Recruitment Services",
+      "categorySlug": "recruitment",
+      "title": "Talent Sourcing & Screening",
+      "tagline": "Rigorous technical skills appraisal, multilingual screening, and verified candidate shortlisting for global employers.",
+      "badge": "CORPORATE STAFFING",
+      "iconName": "Users",
+      "accentColor": "#4F46E5",
+      "accentBg": "bg-indigo-600",
+      "stats": [
+        {
+          "label": "Candidate Database",
+          "value": "100K+"
+        },
+        {
+          "label": "Screening Accuracy",
+          "value": "99.5%"
+        },
+        {
+          "label": "Shortlist Turnaround",
+          "value": "72 Hours"
+        },
+        {
+          "label": "Retention Rate",
+          "value": "96%"
+        }
+      ],
+      "overview": "Finding culturally adaptable, technically proficient, and background-verified talent for international deployment requires stringent vetting. Our multi-stage sourcing engine appraises candidates across technical competency, communication proficiency, and background integrity before presenting shortlists to clients.",
+      "deliverables": [
+        "Multi-Tier Technical & Practical Skill Assessments",
+        "English & Foreign Language Communication Appraisals",
+        "Comprehensive Criminal History & Police Clearance Verifications",
+        "Previous Employer Performance Referencing & Credential Verification",
+        "Standardized Digital Candidate Dossiers with Video Interviews",
+        "Fast-Track 72-Hour Shortlist Delivery for Urgent Requisitions",
+        "Candidate Replacement Warranty within Probation Periods"
+      ],
+      "process": [
+        {
+          "step": "01",
+          "title": "Requisition Analysis",
+          "desc": "We establish exact hiring criteria, technical prerequisites, salary bands, and workplace culture parameters with your HR team."
+        },
+        {
+          "step": "02",
+          "title": "Targeted Headhunting",
+          "desc": "We tap into our proprietary talent repository and industry networks across South Asia and the Middle East to identify high-caliber candidates."
+        },
+        {
+          "step": "03",
+          "title": "Technical & Background Audits",
+          "desc": "Candidates undergo practical assessments, language tests, and comprehensive background verification by our in-house compliance team."
+        },
+        {
+          "step": "04",
+          "title": "Dossier Presentation",
+          "desc": "Employers receive structured candidate profiles with test scores, verified portfolios, and video intros for interview scheduling."
+        }
+      ],
+      "faqs": [
+        {
+          "q": "How fast can YTC Global deliver a qualified candidate shortlist?",
+          "a": "For standard technical, healthcare, and hospitality roles, we deliver pre-screened candidate dossiers within 72 hours of requisition sign-off."
+        },
+        {
+          "q": "Do you conduct trade tests for skilled technical labor?",
+          "a": "Yes, we operate accredited technical testing centers for welding, electrical work, plumbing, CNC mechanics, and culinary trades."
+        },
+        {
+          "q": "What replacement policy do you offer employers?",
+          "a": "We provide a 90-day replacement warranty. If a deployed candidate fails probation or voluntarily resigns, we provide a replacement at no added service fee."
+        }
+      ]
+    },
+    {
+      "slug": "employer-partnerships",
+      "category": "Recruitment Services",
+      "categorySlug": "recruitment",
+      "title": "Employer Partnerships",
+      "tagline": "Strategic manpower supply, bulk workforce deployment, and long-term institutional staffing alliances.",
+      "badge": "ENTERPRISE ALLIANCES",
+      "iconName": "Building2",
+      "accentColor": "#0891B2",
+      "accentBg": "bg-cyan-600",
+      "stats": [
+        {
+          "label": "Corporate Partners",
+          "value": "150+"
+        },
+        {
+          "label": "Bulk Drives Executed",
+          "value": "300+"
+        },
+        {
+          "label": "Deployment Capacity",
+          "value": "1,000 / Mo"
+        },
+        {
+          "label": "SLA Adherence",
+          "value": "99.8%"
+        }
+      ],
+      "overview": "We partner with enterprise conglomerates, government healthcare trusts, hospitality chains, and infrastructure contractors as their strategic cross-border manpower ally. From managing thousands of candidates in bulk hiring drives to overseeing visa pipelines and travel logistics, we provide turnkey workforce scalability.",
+      "deliverables": [
+        "Structured Master Service Agreements (MSA) with Clear SLA Benchmarks",
+        "Turnkey Bulk Recruitment Drives with In-Person or Virtual Client Booths",
+        "Bilateral Government Labor Clearance & Immigration Compliance Management",
+        "End-to-End Ticketing, Charter Logistics & Transit Coordination",
+        "Dedicated Key Account Manager & 24/7 Enterprise Support Dashboard",
+        "Workplace Health, Safety & Compliance Training Prior to Deployment",
+        "Ongoing Worker Welfare & Retention Management Programs"
+      ],
+      "process": [
+        {
+          "step": "01",
+          "title": "Partnership Design",
+          "desc": "We tailor a Master Services Agreement (MSA) aligning with your corporate timelines, volume demands, compliance frameworks, and budget."
+        },
+        {
+          "step": "02",
+          "title": "Hiring Campaign Rollout",
+          "desc": "We execute multi-city recruitment campaigns, pre-screening thousands of applicants to stage client interview drives."
+        },
+        {
+          "step": "03",
+          "title": "Logistics & Immigration",
+          "desc": "Our enterprise operations wing manages medicals, work permit petitions, visa stamping, and flights in scheduled batches."
+        },
+        {
+          "step": "04",
+          "title": "Deployment & Review",
+          "desc": "We oversee on-site arrival, host post-deployment reviews, and maintain ongoing talent pipeline replenishment."
+        }
+      ],
+      "faqs": [
+        {
+          "q": "Can our hiring managers travel to conduct in-person interview drives?",
+          "a": "Absolutely. We host full turnkey client interview drives in modern facilities, handling local hospitality, interview booths, and trade testing equipment."
+        },
+        {
+          "q": "How do you ensure compliance with local and international labor laws?",
+          "a": "Our legal and compliance wing works in direct consultation with the Ministry of External Affairs and destination country labor authorities, ensuring zero legal exposure."
+        },
+        {
+          "q": "What is the maximum bulk recruitment capacity you can handle?",
+          "a": "We regularly execute campaigns deploying between 50 to 500+ workers per hiring cycle for large infrastructure, hospitality, and healthcare initiatives."
+        }
+      ]
+    }
+  ]
+}
