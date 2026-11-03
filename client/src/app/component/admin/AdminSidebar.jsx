@@ -16,16 +16,13 @@ import {
   KeyRound,
 } from 'lucide-react';
 import { useAdminAuth } from '../../context/AdminAuthContext';
+import { useMounted } from '../../lib/useMounted';
 import StatusBadge from './StatusBadge';
 
 export default function AdminSidebar({ isOpen, onClose, onOpenPasswordModal }) {
   const pathname = usePathname();
   const { user, logout } = useAdminAuth();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const mounted = useMounted();
 
   const navItems = [
     {

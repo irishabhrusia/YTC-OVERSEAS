@@ -1,8 +1,19 @@
 node_modules
 .env
+.env.*
+!.env.example
+
+# Uploads & CVs
 uploads/*
 !uploads/images/
 !uploads/images/.gitkeep
 !uploads/cv/
 !uploads/cv/.gitkeep
+uploads/cv/*.*
+!uploads/cv/.gitkeep
+uploads/images/*.*
+!uploads/images/.gitkeep
 
+# Logs & temp
+logs/
+*.log

@@ -173,7 +173,7 @@ async function seedCountryFaqs() {
   await mongoose.connect(mongoUri);
   console.log('Connected to MongoDB:', mongoUri);
 
-  const Country = mongoose.model('Country', new mongoose.Schema({
+  const Country = mongoose.models.Country || mongoose.model('Country', new mongoose.Schema({
     slug: String,
     name: String,
     faqs: [

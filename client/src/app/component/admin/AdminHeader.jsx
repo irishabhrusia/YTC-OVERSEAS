@@ -1,17 +1,14 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Menu, Bell, ShieldCheck, User, KeyRound } from 'lucide-react';
 import { useAdminAuth } from '../../context/AdminAuthContext';
+import { useMounted } from '../../lib/useMounted';
 import StatusBadge from './StatusBadge';
 
 export default function AdminHeader({ onOpenSidebar, onOpenPasswordModal, title, subtitle }) {
   const { user } = useAdminAuth();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const mounted = useMounted();
 
   return (
     <header className="h-16 bg-white border-b border-slate-200/80 sticky top-0 z-30 flex items-center justify-between px-4 sm:px-6 lg:px-8">

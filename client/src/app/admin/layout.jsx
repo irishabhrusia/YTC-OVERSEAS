@@ -6,6 +6,7 @@ import { AdminAuthProvider, useAdminAuth } from '../context/AdminAuthContext';
 import AdminSidebar from '../component/admin/AdminSidebar';
 import AdminHeader from '../component/admin/AdminHeader';
 import ChangePasswordModal from '../component/admin/ChangePasswordModal';
+import { useMounted } from '../lib/useMounted';
 import { Loader2 } from 'lucide-react';
 
 function AdminLayoutInner({ children }) {
@@ -15,11 +16,7 @@ function AdminLayoutInner({ children }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [passwordModalOpen, setPasswordModalOpen] = useState(false);
   const [dismissedForced, setDismissedForced] = useState(false);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const mounted = useMounted();
 
   useEffect(() => {
     if (mounted && !loading && !user && !pathname.startsWith('/admin/reset-password')) {

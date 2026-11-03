@@ -443,13 +443,13 @@ function HeaderContent() {
 
           {/* ── Hamburger (mobile) ── */}
           <div className="flex lg:hidden items-center gap-2">
-            <a
+            <Link
               href="/partner-universities"
               aria-label="Search universities"
               className="w-9 h-9 rounded-full flex items-center justify-center text-slate-600 hover:bg-slate-100"
             >
               <Search className="w-4 h-4" />
-            </a>
+            </Link>
             <button
               onClick={() => setMobileMenuOpen((v) => !v)}
               className="p-2 rounded-lg text-slate-700 hover:bg-slate-100 focus:outline-none cursor-pointer"
