@@ -2,19 +2,12 @@ export function getApiBaseUrl() {
   if (process.env.NEXT_PUBLIC_API_URL) {
     return process.env.NEXT_PUBLIC_API_URL;
   }
+  // In the browser, use same-origin relative path '' so all requests seamlessly proxy through Next.js
   if (typeof window !== 'undefined') {
-    const host = window.location.host;
-    // Auto-detect Antigravity / VS Code devtunnels: xxx-3000.inc1.devtunnels.ms -> xxx-5000.inc1.devtunnels.ms
-    if (host.includes('-3000.') && (host.includes('devtunnels.ms') || host.includes('github.dev'))) {
-      const apiHost = host.replace('-3000.', '-5000.');
-      return `${window.location.protocol}//${apiHost}`;
-    }
-    // Auto-detect local network IP (e.g. 192.168.x.x:3000 -> 192.168.x.x:5000)
-    if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
-      return `${window.location.protocol}//${window.location.hostname}:5000`;
-    }
+    return '';
   }
-  return 'http://localhost:5000';
+  // On the server (Next.js SSR), call Express backend directly
+  return process.env.INTERNAL_API_URL || 'http://localhost:5000';
 }
 
 const BASE_URL = getApiBaseUrl();
@@ -44,7 +37,7 @@ export async function submitLead(type, data = {}) {
   };
 
   try {
-    const response = await fetch(`${BASE_URL}/api/leads`, {
+    const response = await fetch(`${getApiBaseUrl()}/api/leads`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -99,7 +92,7 @@ export async function submitJobApplication(data = {}, file = null) {
       formData.append('cv', file);
     }
 
-    const response = await fetch(`${BASE_URL}/api/applications`, {
+    const response = await fetch(`${getApiBaseUrl()}/api/applications`, {
       method: 'POST',
       body: formData,
     });
@@ -141,7 +134,7 @@ export async function fetchPublicData(endpoint, params = {}, options = {}) {
       if (v !== undefined && v !== null && v !== '') query.append(k, v);
     });
     const qs = query.toString();
-    const url = `${BASE_URL}/api/${endpoint}${qs ? `?${qs}` : ''}`;
+    const url = `${getApiBaseUrl()}/api/${endpoint}${qs ? `?${qs}` : ''}`;
 
     const res = await fetch(url, {
       cache: 'no-store',
@@ -232,7 +225,7 @@ export async function fetchPartners() {
  */
 export async function subscribeNewsletter({ email, interest = 'all' }) {
   try {
-    const response = await fetch(`${BASE_URL}/api/newsletter/subscribe`, {
+    const response = await fetch(`${getApiBaseUrl()}/api/newsletter/subscribe`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

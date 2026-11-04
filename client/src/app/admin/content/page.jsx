@@ -348,14 +348,16 @@ export default function AdminContentPage() {
   }, []);
 
   useEffect(() => {
-    loadCountriesList();
-  }, [loadCountriesList]);
-
-  useEffect(() => {
-    if (activeTab === 'universities') {
-      loadCountriesList();
-    }
-  }, [activeTab, loadCountriesList]);
+    let ignore = false;
+    getContentList('countries').then((res) => {
+      if (!ignore && res.success && Array.isArray(res.data)) {
+        setCountriesList(res.data);
+      }
+    });
+    return () => {
+      ignore = true;
+    };
+  }, [activeTab]);
 
   const extractItems = (resData) => {
     if (Array.isArray(resData)) return resData;

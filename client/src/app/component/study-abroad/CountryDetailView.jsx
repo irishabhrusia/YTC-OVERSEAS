@@ -36,7 +36,6 @@ export default function CountryDetailView({ country, allCountries, initialUniver
   // Synchronize live universities from database for this country
   useEffect(() => {
     if (initialUniversities && initialUniversities.length > 0) {
-      setLiveUnis(initialUniversities);
       return;
     }
     let ignore = false;

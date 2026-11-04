@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import {
@@ -42,7 +42,7 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default async function BlogDetailPage({ params }) {
+async function BlogContent({ params }) {
   const { slug } = await params;
   const blog = await fetchBlogBySlug(slug);
 
@@ -265,5 +265,19 @@ export default async function BlogDetailPage({ params }) {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function BlogDetailPage({ params }) {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-screen bg-slate-50 flex items-center justify-center">
+          <div className="w-10 h-10 rounded-full border-3 border-slate-200 border-t-blue-600 animate-spin" />
+        </div>
+      }
+    >
+      <BlogContent params={params} />
+    </Suspense>
   );
 }
