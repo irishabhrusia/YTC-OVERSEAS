@@ -63,9 +63,36 @@ if (process.env.NODE_ENV !== 'production') {
   app.use(morgan('combined', { stream: accessLogStream }));
 }
 
-// CORS Configuration with credentials
+// CORS Configuration with credentials & dev-tunnel support
+const allowedOrigins = [
+  process.env.CLIENT_URL,
+  'http://localhost:3000',
+  'http://127.0.0.1:3000',
+].filter(Boolean);
+
 const corsOptions = {
-  origin: process.env.CLIENT_URL || 'http://localhost:3000',
+  origin: (origin, callback) => {
+    // Allow tools with no origin (e.g. mobile apps, curl, Postman, server-to-server)
+    if (!origin) return callback(null, true);
+
+    // Explicitly allowed origin
+    if (allowedOrigins.includes(origin)) return callback(null, true);
+
+    // Allow Antigravity / VS Code tunnels, github.dev, localhost, and local Wi-Fi IPs
+    if (
+      process.env.NODE_ENV !== 'production' ||
+      origin.includes('localhost') ||
+      origin.includes('127.0.0.1') ||
+      origin.includes('devtunnels.ms') ||
+      origin.includes('.github.dev') ||
+      origin.includes('app.github.dev') ||
+      /^https?:\/\/(192\.168\.\d+\.\d+|10\.\d+\.\d+\.\d+|172\.(1[6-9]|2\d|3[01])\.\d+\.\d+)(:\d+)?$/.test(origin)
+    ) {
+      return callback(null, true);
+    }
+
+    return callback(new Error(`Origin ${origin} not allowed by CORS`));
+  },
   credentials: true,
 };
 app.use(cors(corsOptions));

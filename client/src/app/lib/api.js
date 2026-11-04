@@ -1,4 +1,23 @@
-const BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+export function getApiBaseUrl() {
+  if (process.env.NEXT_PUBLIC_API_URL) {
+    return process.env.NEXT_PUBLIC_API_URL;
+  }
+  if (typeof window !== 'undefined') {
+    const host = window.location.host;
+    // Auto-detect Antigravity / VS Code devtunnels: xxx-3000.inc1.devtunnels.ms -> xxx-5000.inc1.devtunnels.ms
+    if (host.includes('-3000.') && (host.includes('devtunnels.ms') || host.includes('github.dev'))) {
+      const apiHost = host.replace('-3000.', '-5000.');
+      return `${window.location.protocol}//${apiHost}`;
+    }
+    // Auto-detect local network IP (e.g. 192.168.x.x:3000 -> 192.168.x.x:5000)
+    if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+      return `${window.location.protocol}//${window.location.hostname}:5000`;
+    }
+  }
+  return 'http://localhost:5000';
+}
+
+const BASE_URL = getApiBaseUrl();
 
 /**
  * Submits a lead to the backend Leads API.
@@ -249,7 +268,8 @@ export async function subscribeNewsletter({ email, interest = 'all' }) {
  */
 export async function fetchFooterSettings() {
   try {
-    const res = await fetch(`${BASE_URL}/api/settings/footer`, {
+    const baseUrl = getApiBaseUrl();
+    const res = await fetch(`${baseUrl}/api/settings/footer`, {
       cache: 'no-store',
     });
     if (!res.ok) return null;
@@ -266,7 +286,8 @@ export async function fetchFooterSettings() {
  */
 export async function fetchContactSettings() {
   try {
-    const res = await fetch(`${BASE_URL}/api/settings/contact`, {
+    const baseUrl = getApiBaseUrl();
+    const res = await fetch(`${baseUrl}/api/settings/contact`, {
       cache: 'no-store',
     });
     if (!res.ok) return null;

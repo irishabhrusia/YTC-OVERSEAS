@@ -1,10 +1,28 @@
-const BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+function getApiBaseUrl() {
+  if (process.env.NEXT_PUBLIC_API_URL) {
+    return process.env.NEXT_PUBLIC_API_URL;
+  }
+  if (typeof window !== 'undefined') {
+    const host = window.location.host;
+    // Auto-detect Antigravity / VS Code devtunnels: xxx-3000.inc1.devtunnels.ms -> xxx-5000.inc1.devtunnels.ms
+    if (host.includes('-3000.') && (host.includes('devtunnels.ms') || host.includes('github.dev'))) {
+      const apiHost = host.replace('-3000.', '-5000.');
+      return `${window.location.protocol}//${apiHost}`;
+    }
+    // Auto-detect local network IP (e.g. 192.168.x.x:3000 -> 192.168.x.x:5000)
+    if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+      return `${window.location.protocol}//${window.location.hostname}:5000`;
+    }
+  }
+  return 'http://localhost:5000';
+}
 
 /**
  * Universal fetch wrapper for Admin API requests with cookies (JWT) support.
  */
 async function adminFetch(endpoint, options = {}) {
-  const url = `${BASE_URL}${endpoint}`;
+  const baseUrl = getApiBaseUrl();
+  const url = `${baseUrl}${endpoint}`;
   const isFormData = options.body instanceof FormData;
 
   const defaultHeaders = {};
