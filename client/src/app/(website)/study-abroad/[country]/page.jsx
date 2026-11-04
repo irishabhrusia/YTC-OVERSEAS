@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react';
 import { notFound } from 'next/navigation';
 import CountryDetailView from '../../../component/study-abroad/CountryDetailView';
-import { fetchCountryBySlug, fetchCountries } from '../../../lib/api';
+import { fetchCountryBySlug, fetchCountries, fetchUniversities } from '../../../lib/api';
 
 // Generate static routes dynamically from backend
 export async function generateStaticParams() {
@@ -47,11 +47,16 @@ async function CountryContent({ params }) {
   }
 
   const allCountries = (await fetchCountries()) || [];
+  const universities = await fetchUniversities({
+    country: country._id || country.slug,
+    limit: 100,
+  }).catch(() => []);
 
   return (
     <CountryDetailView
       country={country}
       allCountries={allCountries}
+      initialUniversities={universities}
     />
   );
 }

@@ -154,6 +154,7 @@ export default function HomePage() {
                 logo: u.logo || u.image,
                 country: u.country?.name || 'Global',
                 ranking: u.ranking ? `#${u.ranking}` : undefined,
+                
               }))
             );
           }
@@ -196,11 +197,11 @@ export default function HomePage() {
       <StudyDestinations items={dynamicDestinations || undefined} isLoading={destinationsLoading} />
 
       {/* 3. Popular Destinations */}
-      <PopularDestinations
+      {/* <PopularDestinations
         destinations={dynamicDestinations || undefined}
         isLoading={destinationsLoading}
         onSelectDestination={(country) => handleOpenConsultation(country)}
-      />
+      /> */}
 
       {/* 4. Partner Universities */}
       <PartnerUniversities items={dynamicUniversities || undefined} isLoading={universitiesLoading} />

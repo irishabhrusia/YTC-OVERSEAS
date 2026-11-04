@@ -138,7 +138,11 @@ export default function BlogListingPage() {
   return (
     <div className="min-h-screen bg-slate-50">
       {/* 1. Page Header */}
-      <PageHeader {...pageHeaders.blog} />
+      <PageHeader 
+        variant = "light"
+        data = {pageHeaders.blog}
+      
+      />
 
       {/* 2. Main Content Container */}
       <section className="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

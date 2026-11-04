@@ -125,12 +125,12 @@ export async function fetchPublicData(endpoint, params = {}, options = {}) {
     const url = `${BASE_URL}/api/${endpoint}${qs ? `?${qs}` : ''}`;
 
     const res = await fetch(url, {
+      cache: 'no-store',
       ...options,
       headers: {
         'Content-Type': 'application/json',
         ...(options.headers || {}),
       },
-      next: { revalidate: 60, ...(options.next || {}) },
     });
 
     if (!res.ok) {

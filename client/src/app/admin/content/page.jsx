@@ -338,13 +338,24 @@ export default function AdminContentPage() {
   const currentTab = TABS.find((t) => t.id === activeTab) || TABS[0];
 
   // Load countries list for university dropdowns
-  useEffect(() => {
-    getContentList('countries').then((res) => {
-      if (res.success && Array.isArray(res.data)) {
-        setCountriesList(res.data);
-      }
-    });
+  const loadCountriesList = useCallback(async () => {
+    const res = await getContentList('countries');
+    if (res.success && Array.isArray(res.data)) {
+      setCountriesList(res.data);
+      return res.data;
+    }
+    return [];
   }, []);
+
+  useEffect(() => {
+    loadCountriesList();
+  }, [loadCountriesList]);
+
+  useEffect(() => {
+    if (activeTab === 'universities') {
+      loadCountriesList();
+    }
+  }, [activeTab, loadCountriesList]);
 
   const extractItems = (resData) => {
     if (Array.isArray(resData)) return resData;
@@ -391,8 +402,16 @@ export default function AdminContentPage() {
     };
   }, [activeTab]);
 
-  const handleOpenCreate = () => {
+  const handleOpenCreate = async () => {
     setEditingItem(null);
+    let currentCountries = countriesList;
+    if (activeTab === 'universities') {
+      const fresh = await loadCountriesList();
+      if (Array.isArray(fresh) && fresh.length > 0) {
+        currentCountries = fresh;
+      }
+    }
+
     if (activeTab === 'countries') {
       setFormData({
         name: '',
@@ -424,11 +443,22 @@ export default function AdminContentPage() {
         whyStudy: [
           { title: 'Global Academic Prestige', desc: 'Degrees respected by top multinational employers worldwide.' },
           { title: 'Post-Study Work Pathways', desc: 'Robust graduate work visa rights and high employability.' },
+          { title: 'Affordable Cost of Study', desc: 'Competitive tuition fees and accessible cost of living.' },
+          { title: 'Multicultural Campus Culture', desc: 'Welcoming academic communities with extensive international student support.' },
         ],
+        popularPrograms: [
+          'Computer Science & Artificial Intelligence',
+          'Business Administration & MBA',
+          'Data Science & Analytics',
+          'Engineering & Advanced Robotics',
+          'Medicine, Nursing & Public Health',
+          'Finance & International Trade',
+        ],
+        topUniversities: [],
         isActive: true,
       });
     } else if (activeTab === 'universities') {
-      const defaultCountry = countriesList[0]?._id || '';
+      const defaultCountry = currentCountries[0]?._id || countriesList[0]?._id || '';
       setFormData({
         name: '',
         slug: '',
@@ -496,6 +526,9 @@ export default function AdminContentPage() {
   };
 
   const handleOpenEdit = (item) => {
+    if (activeTab === 'universities') {
+      loadCountriesList();
+    }
     setEditingItem(item);
     setFormData({
       ...item,
@@ -505,8 +538,10 @@ export default function AdminContentPage() {
       requirements: Array.isArray(item.requirements) ? item.requirements.join('\n') : item.requirements || '',
       benefits: Array.isArray(item.benefits) ? item.benefits.join('\n') : item.benefits || '',
       quickFacts: item.quickFacts || {},
-      stats: item.stats || [],
-      whyStudy: item.whyStudy || [],
+      stats: Array.isArray(item.stats) ? item.stats : [],
+      whyStudy: Array.isArray(item.whyStudy) ? item.whyStudy : [],
+      popularPrograms: Array.isArray(item.popularPrograms) ? item.popularPrograms : [],
+      topUniversities: Array.isArray(item.topUniversities) ? item.topUniversities : [],
       summary: item.summary || item.excerpt || '',
       excerpt: item.excerpt || item.summary || '',
       content: item.content || item.excerpt || item.summary || '',
@@ -523,6 +558,9 @@ export default function AdminContentPage() {
     const res = await deleteContentItem(activeTab, item._id);
     if (res.success) {
       setItems((prev) => prev.filter((i) => i._id !== item._id));
+      if (activeTab === 'countries') {
+        loadCountriesList();
+      }
       setFeedback({ type: 'success', message: 'Item deleted successfully.' });
       setTimeout(() => setFeedback(null), 3000);
     } else {
@@ -536,6 +574,27 @@ export default function AdminContentPage() {
     setFeedback(null);
 
     const payload = { ...formData };
+    if (activeTab === 'countries') {
+      if (Array.isArray(payload.whyStudy)) {
+        payload.whyStudy = payload.whyStudy
+          .filter((item) => item && (item.title?.trim() || item.desc?.trim()))
+          .map((item) => ({ title: item.title?.trim() || '', desc: item.desc?.trim() || '' }));
+      }
+      if (Array.isArray(payload.popularPrograms)) {
+        payload.popularPrograms = payload.popularPrograms
+          .map((p) => (typeof p === 'string' ? p.trim() : ''))
+          .filter(Boolean);
+      }
+      if (Array.isArray(payload.stats)) {
+        payload.stats = payload.stats
+          .filter((s) => s && (s.label?.trim() || s.value?.trim()))
+          .map((s) => ({ label: s.label?.trim() || '', value: s.value?.trim() || '' }));
+      }
+      if (!Array.isArray(payload.topUniversities)) {
+        payload.topUniversities = [];
+      }
+    }
+
     if (activeTab === 'blogs') {
       if (!payload.title && payload.name) payload.title = payload.name;
       if (!payload.name && payload.title) payload.name = payload.title;
@@ -567,6 +626,9 @@ export default function AdminContentPage() {
     if (res.success) {
       setModalOpen(false);
       fetchItems();
+      if (activeTab === 'countries') {
+        loadCountriesList();
+      }
       setFeedback({
         type: 'success',
         message: `${currentTab.singular} ${editingItem ? 'updated' : 'created'} successfully!`,
@@ -3083,6 +3145,213 @@ export default function AdminContentPage() {
                     value={formData.heroImage || ''}
                     onChange={(url) => setFormData({ ...formData, heroImage: url })}
                   />
+
+                  {/* ── Why Choose to Study in [Country] Table ── */}
+                  <div className="pt-3 border-t border-slate-200/80 space-y-3">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <label className="block text-xs font-bold text-slate-800">
+                          Why Choose to Study in {formData.name || 'this Country'}
+                        </label>
+                        <p className="text-[11px] text-slate-500">
+                          Key reasons and benefits highlighted on the country&apos;s page.
+                        </p>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          const arr = Array.isArray(formData.whyStudy) ? [...formData.whyStudy] : [];
+                          arr.push({ title: '', desc: '' });
+                          setFormData({ ...formData, whyStudy: arr });
+                        }}
+                        className="px-2.5 py-1 bg-blue-50 hover:bg-blue-100 text-blue-600 rounded-lg text-xs font-bold transition-colors cursor-pointer flex items-center gap-1"
+                      >
+                        <Plus className="w-3.5 h-3.5" />
+                        <span>Add Reason</span>
+                      </button>
+                    </div>
+
+                    <div className="space-y-2.5 max-h-60 overflow-y-auto pr-1">
+                      {(formData.whyStudy || []).map((reason, idx) => (
+                        <div key={idx} className="p-3 bg-slate-50 rounded-xl border border-slate-200 space-y-2 relative group">
+                          <div className="flex items-center justify-between">
+                            <span className="text-[11px] font-bold text-slate-600 flex items-center gap-1.5">
+                              <span className="w-4 h-4 rounded-full bg-blue-100 text-blue-700 text-[10px] font-extrabold flex items-center justify-center">
+                                {idx + 1}
+                              </span>
+                              <span>Pillar / Benefit #{idx + 1}</span>
+                            </span>
+                            <button
+                              type="button"
+                              onClick={() => {
+                                const arr = formData.whyStudy.filter((_, i) => i !== idx);
+                                setFormData({ ...formData, whyStudy: arr });
+                              }}
+                              className="text-slate-400 hover:text-rose-600 transition-colors cursor-pointer flex items-center gap-1 text-[11px]"
+                              title="Remove Reason"
+                            >
+                              <Trash2 className="w-3 h-3" />
+                              <span>Remove</span>
+                            </button>
+                          </div>
+                          <input
+                            type="text"
+                            placeholder="Title (e.g. World-Class Academic Excellence)"
+                            value={reason.title || ''}
+                            onChange={(e) => {
+                              const arr = [...formData.whyStudy];
+                              arr[idx] = { ...arr[idx], title: e.target.value };
+                              setFormData({ ...formData, whyStudy: arr });
+                            }}
+                            className="w-full px-2.5 py-1.5 bg-white border border-slate-200 rounded-lg text-xs font-bold text-slate-900"
+                          />
+                          <textarea
+                            rows={2}
+                            placeholder="Description explaining why students should choose this destination..."
+                            value={reason.desc || ''}
+                            onChange={(e) => {
+                              const arr = [...formData.whyStudy];
+                              arr[idx] = { ...arr[idx], desc: e.target.value };
+                              setFormData({ ...formData, whyStudy: arr });
+                            }}
+                            className="w-full px-2.5 py-1.5 bg-white border border-slate-200 rounded-lg text-xs leading-relaxed text-slate-700 resize-none"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* ── Popular Programs in [Country] Table ── */}
+                  <div className="pt-3 border-t border-slate-200/80 space-y-3">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <label className="block text-xs font-bold text-slate-800">
+                          Popular Programs in {formData.name || 'this Country'}
+                        </label>
+                        <p className="text-[11px] text-slate-500">
+                          Degrees and fields in high demand for this country.
+                        </p>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          const arr = Array.isArray(formData.popularPrograms) ? [...formData.popularPrograms] : [];
+                          arr.push('');
+                          setFormData({ ...formData, popularPrograms: arr });
+                        }}
+                        className="px-2.5 py-1 bg-blue-50 hover:bg-blue-100 text-blue-600 rounded-lg text-xs font-bold transition-colors cursor-pointer flex items-center gap-1"
+                      >
+                        <Plus className="w-3.5 h-3.5" />
+                        <span>Add Program</span>
+                      </button>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 max-h-48 overflow-y-auto pr-1">
+                      {(formData.popularPrograms || []).map((prog, idx) => (
+                        <div key={idx} className="flex items-center gap-1.5 bg-slate-50 p-1.5 rounded-xl border border-slate-200">
+                          <input
+                            type="text"
+                            placeholder="Program name (e.g. Computer Science & AI)"
+                            value={prog || ''}
+                            onChange={(e) => {
+                              const arr = [...formData.popularPrograms];
+                              arr[idx] = e.target.value;
+                              setFormData({ ...formData, popularPrograms: arr });
+                            }}
+                            className="flex-1 px-2.5 py-1 bg-white border border-slate-200 rounded-lg text-xs font-medium text-slate-800"
+                          />
+                          <button
+                            type="button"
+                            onClick={() => {
+                              const arr = formData.popularPrograms.filter((_, i) => i !== idx);
+                              setFormData({ ...formData, popularPrograms: arr });
+                            }}
+                            className="p-1 text-slate-400 hover:text-rose-600 transition-colors cursor-pointer"
+                            title="Remove Program"
+                          >
+                            <Trash2 className="w-3.5 h-3.5" />
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* ── Key Highlights / Metric Stats Table ── */}
+                  <div className="pt-3 border-t border-slate-200/80 space-y-3">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <label className="block text-xs font-bold text-slate-800">
+                          Key Highlights & Statistics
+                        </label>
+                        <p className="text-[11px] text-slate-500">
+                          Metrics shown in the country hero bar (e.g., &quot;Work Rights&quot;, &quot;Post-Study Work&quot;).
+                        </p>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          const arr = Array.isArray(formData.stats) ? [...formData.stats] : [];
+                          arr.push({ label: '', value: '' });
+                          setFormData({ ...formData, stats: arr });
+                        }}
+                        className="px-2.5 py-1 bg-blue-50 hover:bg-blue-100 text-blue-600 rounded-lg text-xs font-bold transition-colors cursor-pointer flex items-center gap-1"
+                      >
+                        <Plus className="w-3.5 h-3.5" />
+                        <span>Add Metric</span>
+                      </button>
+                    </div>
+
+                    <div className="space-y-2 max-h-48 overflow-y-auto pr-1">
+                      {(formData.stats || []).map((st, idx) => (
+                        <div key={idx} className="flex items-center gap-2 bg-slate-50 p-2 rounded-xl border border-slate-200">
+                          <input
+                            type="text"
+                            placeholder="Label (e.g. Work Rights)"
+                            value={st.label || ''}
+                            onChange={(e) => {
+                              const arr = [...formData.stats];
+                              arr[idx] = { ...arr[idx], label: e.target.value };
+                              setFormData({ ...formData, stats: arr });
+                            }}
+                            className="flex-1 px-2.5 py-1.5 bg-white border border-slate-200 rounded-lg text-xs font-medium text-slate-800"
+                          />
+                          <input
+                            type="text"
+                            placeholder="Value (e.g. 20 Hrs/Wk)"
+                            value={st.value || ''}
+                            onChange={(e) => {
+                              const arr = [...formData.stats];
+                              arr[idx] = { ...arr[idx], value: e.target.value };
+                              setFormData({ ...formData, stats: arr });
+                            }}
+                            className="w-32 px-2.5 py-1.5 bg-white border border-slate-200 rounded-lg text-xs font-bold text-slate-900"
+                          />
+                          <button
+                            type="button"
+                            onClick={() => {
+                              const arr = formData.stats.filter((_, i) => i !== idx);
+                              setFormData({ ...formData, stats: arr });
+                            }}
+                            className="p-1.5 text-slate-400 hover:text-rose-600 rounded-lg transition-colors cursor-pointer"
+                            title="Remove Metric"
+                          >
+                            <Trash2 className="w-3.5 h-3.5" />
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* ── Top Universities Dynamic Linking Info Box ── */}
+                  <div className="p-3.5 rounded-xl bg-blue-50/70 border border-blue-200/80 flex items-start gap-3">
+                    <GraduationCap className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                    <div className="text-xs text-blue-900 leading-relaxed">
+                      <p className="font-bold">Top Universities are Dynamic & Kept Empty Initially</p>
+                      <p className="text-blue-700 text-[11px] mt-0.5">
+                        New countries start with Top Universities empty. When you create any university in the <strong>Universities</strong> tab and link it to <em>{formData.name || 'this country'}</em>, it will automatically appear in the Top Universities section on this country&apos;s page!
+                      </p>
+                    </div>
+                  </div>
                 </>
               )}
 
@@ -3099,11 +3368,17 @@ export default function AdminContentPage() {
                       className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs font-medium text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     >
                       <option value="">-- Select Country --</option>
-                      {countriesList.map((c) => (
-                        <option key={c._id} value={c._id}>
-                          {c.flag || ''} {c.name || c.shortName}
-                        </option>
-                      ))}
+                      {countriesList
+                        .slice()
+                        .sort((a, b) => (a.name || '').localeCompare(b.name || ''))
+                        .map((c) => {
+                          const flag = c.flag || getFlagEmoji(c.code);
+                          return (
+                            <option key={c._id} value={c._id}>
+                              {flag ? `${flag} ` : ''}{c.name || c.shortName}
+                            </option>
+                          );
+                        })}
                     </select>
                   </div>
 

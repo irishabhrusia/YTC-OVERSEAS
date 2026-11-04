@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
@@ -24,12 +24,139 @@ import {
 } from 'lucide-react';
 import PageHeader from '../PageHeader';
 import ConsultationModal from '../homesection/ConsultationModal';
+import { fetchUniversities } from '../../lib/api';
 
-export default function CountryDetailView({ country, allCountries }) {
+export default function CountryDetailView({ country, allCountries, initialUniversities = [] }) {
   const [isConsultationModalOpen, setIsConsultationModalOpen] = useState(false);
   const [openFaqIndex, setOpenFaqIndex] = useState(0);
+  const [liveUnis, setLiveUnis] = useState(initialUniversities || []);
 
   const toggleFaq = (idx) => setOpenFaqIndex(openFaqIndex === idx ? null : idx);
+
+  // Synchronize live universities from database for this country
+  useEffect(() => {
+    if (initialUniversities && initialUniversities.length > 0) {
+      setLiveUnis(initialUniversities);
+      return;
+    }
+    let ignore = false;
+    const countryId = country?._id || country?.slug;
+    if (countryId) {
+      fetchUniversities({ country: countryId, limit: 100 }).then((data) => {
+        const list = Array.isArray(data) ? data : (data?.universities || []);
+        if (!ignore && list.length > 0) {
+          setLiveUnis(list);
+        }
+      });
+    }
+    return () => {
+      ignore = true;
+    };
+  }, [country, initialUniversities]);
+
+  // Derived Top Universities for this country (live DB first, then seed fallback, else empty)
+  const displayUniversities = useMemo(() => {
+    if (Array.isArray(liveUnis) && liveUnis.length > 0) {
+      return liveUnis.map((u) => {
+        const rawRanking = u.ranking;
+        const qsRank = rawRanking
+          ? (String(rawRanking).startsWith('#') ? String(rawRanking) : `QS #${rawRanking}`)
+          : 'QS Top';
+        const popularFor = Array.isArray(u.popularCourses) && u.popularCourses.length > 0
+          ? u.popularCourses.join(', ')
+          : (u.description || 'Comprehensive Degree Programs');
+        const avgFee = u.tuitionFrom ? `$${u.tuitionFrom.toLocaleString()} / Yr` : (u.avgFee || 'Tuition Varies');
+        const location = [u.city, country?.name].filter(Boolean).join(', ') || country?.name || '';
+
+        return {
+          id: u._id || u.slug,
+          slug: u.slug || '',
+          name: u.name,
+          qsRank,
+          location,
+          popularFor,
+          avgFee,
+          image: u.image || u.logo || '',
+          logo: u.logo || u.image || '',
+        };
+      });
+    }
+
+    if (Array.isArray(country?.topUniversities) && country.topUniversities.length > 0) {
+      return country.topUniversities.map((u, i) => ({
+        id: u._id || `top-${i}`,
+        slug: u.slug || '',
+        name: u.name,
+        qsRank: u.qsRank || 'QS Top',
+        location: u.city ? `${u.city}, ${country?.name}` : (u.location || country?.name || ''),
+        popularFor: u.popularFor || 'Undergraduate & Postgraduate Degrees',
+        avgFee: u.avgFee || u.avgTuition || 'Varies by Program',
+        image: u.image || '',
+        logo: u.logo || '',
+      }));
+    }
+
+    return [];
+  }, [liveUnis, country]);
+
+  // Derived Why Study in [Country] with rich fallbacks so newly created countries are never blank
+  const displayWhyStudy = useMemo(() => {
+    if (Array.isArray(country?.whyStudy) && country.whyStudy.length > 0) {
+      const filtered = country.whyStudy.filter((item) => item && (item.title || item.desc));
+      if (filtered.length > 0) return filtered;
+    }
+    const countryName = country?.name || 'this destination';
+    return [
+      {
+        title: 'World-Class Academic Excellence',
+        desc: `Top accredited universities in ${countryName} offer rigorous degree curricula, internationally certified faculty, and state-of-the-art research laboratories.`,
+      },
+      {
+        title: 'Post-Study Work & Career Pathways',
+        desc: `Graduates in ${countryName} gain direct access to post-study work permits, opening fast pathways to multinational internships and employment.`,
+      },
+      {
+        title: 'Competitive Tuition & Scholarships',
+        desc: `Benefit from high value for money with accessible tuition fee structures, departmental scholarships, and generous campus work rights.`,
+      },
+      {
+        title: 'Vibrant Multicultural Community',
+        desc: `Enjoy a welcoming, safe environment fostering global student networking, inclusive campus activities, and lifelong friendships.`,
+      },
+    ];
+  }, [country]);
+
+  // Derived Popular Programs with fallbacks
+  const displayPrograms = useMemo(() => {
+    if (Array.isArray(country?.popularPrograms) && country.popularPrograms.length > 0) {
+      const filtered = country.popularPrograms.filter((p) => typeof p === 'string' && p.trim().length > 0);
+      if (filtered.length > 0) return filtered;
+    }
+    return [
+      'Computer Science & Artificial Intelligence',
+      'Business Administration & Management (MBA)',
+      'Data Science & Big Data Analytics',
+      'Mechanical & Aerospace Engineering',
+      'Biomedical Sciences, Healthcare & Nursing',
+      'Finance, International Banking & Accounting',
+      'Digital Marketing & Communications',
+      'Cybersecurity & Cloud Computing',
+    ];
+  }, [country]);
+
+  // Derived Stats with fallbacks
+  const displayStats = useMemo(() => {
+    if (Array.isArray(country?.stats) && country.stats.length > 0) {
+      const filtered = country.stats.filter((s) => s && (s.value || s.label));
+      if (filtered.length > 0) return filtered;
+    }
+    return [
+      { label: 'Top Universities', value: '25+' },
+      { label: 'Intl. Students', value: '100K+' },
+      { label: 'Work Rights', value: '20 Hrs/Wk' },
+      { label: 'Post-Study Work', value: 'Up to 3 Years' },
+    ];
+  }, [country]);
 
   // Other countries excluding current one
   const otherCountries = (allCountries || []).filter((c) => c?.slug !== country?.slug);
@@ -110,7 +237,7 @@ export default function CountryDetailView({ country, allCountries }) {
       <section className="py-10 bg-white/70 border-b border-slate-200/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
-            {(country.stats || []).map((stat, idx) => (
+            {displayStats.map((stat, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 15 }}
@@ -155,7 +282,7 @@ export default function CountryDetailView({ country, allCountries }) {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {(country.whyStudy || []).map((item, idx) => (
+            {displayWhyStudy.map((item, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 25 }}
@@ -211,59 +338,130 @@ export default function CountryDetailView({ country, allCountries }) {
             </button>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {(country.topUniversities || []).map((uni, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 25 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.45, delay: idx * 0.08 }}
-                whileHover={{ y: -6 }}
-                className="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200/90 shadow-md hover:shadow-2xl hover:border-blue-400 transition-all flex flex-col justify-between group"
-              >
-                <div className="space-y-4">
-                  <div className="flex items-start justify-between gap-2">
-                    <span className="px-3 py-1 rounded-full text-xs font-extrabold bg-blue-100 text-blue-700">
-                      {uni.qsRank}
-                    </span>
-                    <span className="text-xs font-semibold text-slate-500 flex items-center gap-1">
-                      <MapPin className="w-3.5 h-3.5 text-blue-500" />
-                      {uni.location}
-                    </span>
+          {displayUniversities.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {displayUniversities.map((uni, idx) => (
+                <motion.div
+                  key={uni.id || idx}
+                  initial={{ opacity: 0, y: 25 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.45, delay: idx * 0.08 }}
+                  whileHover={{ y: -6 }}
+                  className="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200/90 shadow-md hover:shadow-2xl hover:border-blue-400 transition-all flex flex-col justify-between group"
+                >
+                  <div className="space-y-4">
+                    <div className="flex items-start justify-between gap-2">
+                      <span className="px-3 py-1 rounded-full text-xs font-extrabold bg-blue-50 text-blue-700 border border-blue-100 flex items-center gap-1">
+                        <Award className="w-3.5 h-3.5 text-blue-600" />
+                        <span>{uni.qsRank}</span>
+                      </span>
+                      <span className="text-xs font-semibold text-slate-500 flex items-center gap-1">
+                        <MapPin className="w-3.5 h-3.5 text-blue-500" />
+                        <span>{uni.location}</span>
+                      </span>
+                    </div>
+
+                    <div className="flex items-start gap-3">
+                      {uni.image ? (
+                        <div className="w-12 h-12 rounded-xl bg-slate-50 border border-slate-200 overflow-hidden shrink-0 shadow-2xs">
+                          <img
+                            src={uni.image}
+                            alt={uni.name}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                          />
+                        </div>
+                      ) : (
+                        <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 font-extrabold text-sm flex items-center justify-center border border-blue-100 shrink-0">
+                          {(uni.name || '').split(' ').slice(0, 2).map((w) => w[0]).join('')}
+                        </div>
+                      )}
+                      <div className="flex-1 min-w-0">
+                        {uni.slug ? (
+                          <Link href={`/partner-universities/${uni.slug}`} className="block">
+                            <h3 className="font-extrabold text-lg text-slate-900 group-hover:text-blue-600 transition-colors leading-snug">
+                              {uni.name}
+                            </h3>
+                          </Link>
+                        ) : (
+                          <h3 className="font-extrabold text-lg text-slate-900 leading-snug">
+                            {uni.name}
+                          </h3>
+                        )}
+                      </div>
+                    </div>
+
+                    <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-100 space-y-2 text-xs">
+                      <div>
+                        <span className="text-slate-400 font-medium block">Popular Programs:</span>
+                        <span className="font-semibold text-slate-800 line-clamp-2">{uni.popularFor}</span>
+                      </div>
+                      <div>
+                        <span className="text-slate-400 font-medium block">Average Annual Tuition:</span>
+                        <span className="font-bold text-blue-700">{uni.avgFee}</span>
+                      </div>
+                    </div>
                   </div>
 
-                  <h3 className="font-bold text-xl text-slate-900 group-hover:text-blue-600 transition-colors leading-snug">
-                    {uni.name}
-                  </h3>
+                  <div className="pt-5 mt-5 border-t border-slate-100 flex items-center justify-between gap-2">
+                    {uni.slug ? (
+                      <Link
+                        href={`/partner-universities/${uni.slug}`}
+                        className="text-xs font-bold text-slate-700 hover:text-blue-600 inline-flex items-center gap-1 group/btn transition-colors"
+                      >
+                        <span>View Details</span>
+                        <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-1" />
+                      </Link>
+                    ) : (
+                      <button
+                        onClick={() => setIsConsultationModalOpen(true)}
+                        className="text-xs font-bold text-blue-600 hover:text-blue-700 inline-flex items-center gap-1 group/btn cursor-pointer"
+                      >
+                        <span>Apply to this University</span>
+                        <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-1" />
+                      </button>
+                    )}
 
-                  <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-100 space-y-2 text-xs">
-                    <div>
-                      <span className="text-slate-400 font-medium block">Popular Programs:</span>
-                      <span className="font-semibold text-slate-800">{uni.popularFor}</span>
-                    </div>
-                    <div>
-                      <span className="text-slate-400 font-medium block">Average Annual Tuition:</span>
-                      <span className="font-bold text-blue-700">{uni.avgFee}</span>
-                    </div>
+                    <button
+                      onClick={() => setIsConsultationModalOpen(true)}
+                      className="px-3.5 py-1.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs shadow-xs transition-colors cursor-pointer"
+                    >
+                      Apply Now
+                    </button>
                   </div>
-                </div>
-
-                <div className="pt-5 mt-5 border-t border-slate-100 flex items-center justify-between">
-                  <button
-                    onClick={() => setIsConsultationModalOpen(true)}
-                    className="text-xs font-bold text-blue-600 hover:text-blue-700 inline-flex items-center gap-1 group/btn cursor-pointer"
-                  >
-                    <span>Apply to this University</span>
-                    <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-1" />
-                  </button>
-                  <span className="text-[11px] font-semibold text-emerald-600 bg-emerald-50 px-2.5 py-0.5 rounded-full">
-                    Partner DLI
-                  </span>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+                </motion.div>
+              ))}
+            </div>
+          ) : (
+            /* Clean Empty State when no universities exist yet */
+            <div className="bg-white rounded-3xl p-10 sm:p-14 border border-slate-200/90 shadow-sm text-center max-w-2xl mx-auto space-y-4">
+              <div className="w-16 h-16 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mx-auto shadow-2xs">
+                <GraduationCap className="w-8 h-8" />
+              </div>
+              <h3 className="font-extrabold text-xl sm:text-2xl text-slate-900">
+                Partner Institutions in {country.name}
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-500 leading-relaxed max-w-md mx-auto">
+                We are actively expanding and verifying direct articulation partnerships with top universities across {country.name}.
+                Our senior counselors provide 1-on-1 profile evaluation, bespoke university shortlisting, and direct admission applications.
+              </p>
+              <div className="pt-3 flex flex-col sm:flex-row items-center justify-center gap-3">
+                <button
+                  onClick={() => setIsConsultationModalOpen(true)}
+                  className="px-6 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold text-xs shadow-md shadow-blue-500/20 transition-all cursor-pointer flex items-center gap-2"
+                >
+                  <Sparkles className="w-4 h-4" />
+                  <span>Request {country.name} University Shortlist</span>
+                </button>
+                <Link
+                  href="/partner-universities"
+                  className="px-5 py-3 rounded-xl border border-slate-300 hover:bg-slate-50 text-slate-700 font-bold text-xs transition-colors"
+                >
+                  Explore All Global Universities
+                </Link>
+              </div>
+            </div>
+          )}
 
         </div>
       </section>
@@ -288,7 +486,7 @@ export default function CountryDetailView({ country, allCountries }) {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {(country.popularPrograms || []).map((prog, i) => (
+            {displayPrograms.map((prog, i) => (
               <div
                 key={i}
                 className="p-4 sm:p-5 rounded-2xl bg-slate-50 hover:bg-blue-50/70 border border-slate-200/80 hover:border-blue-300 transition-all flex items-center gap-3.5 group cursor-default"
